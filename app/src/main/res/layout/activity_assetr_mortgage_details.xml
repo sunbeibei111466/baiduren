@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.AssetrMortgageDetails">
+
+    <LinearLayout
+        android:id="@+id/ll_currency_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_assetr_details_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="资产抵押详情"
+            android:textColor="@color/light_hei" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_assetr_details_updata"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_details_1"
+        style="@style/line_height_0_5dp_style"
+        app:layout_constraintTop_toBottomOf="@id/ll_currency_details_toolbar">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/view_details_1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="资产名称" />
+
+                <TextView
+                    android:id="@+id/mort_assert_name"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="数量" />
+
+                <TextView
+                    android:id="@+id/mort_assert_num"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估价值" />
+
+                <TextView
+                    android:id="@+id/mort_assert_value"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <!--<LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="所属地" />
+
+                <TextView
+                    android:id="@+id/mort_assert_area"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>-->
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估机构:" />
+
+                <TextView
+                    android:id="@+id/mort_assert_adress"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/rv_sponsor_details_imagelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.PdfActivity">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_pdf_finish"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/tv_pdf"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:textColor="#333"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_pdf"
+        style="@style/line_height_0_5dp_style_hui"
+        android:layout_below="@+id/title_bar_layout" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/view_pdf">
+
+        <com.tencent.smtt.sdk.WebView
+            android:id="@+id/wb_pdf"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+        </com.tencent.smtt.sdk.WebView>
+
+        <ProgressBar
+            android:id="@+id/pro"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true" />
+
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_wait"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_centerInParent="true"
+        android:gravity="center"
+        android:text="报告正在盖章中，请等待"
+        android:textColor="@color/blue"
+        android:textSize="18sp"
+        android:visibility="gone" />
+
+
+</RelativeLayout>

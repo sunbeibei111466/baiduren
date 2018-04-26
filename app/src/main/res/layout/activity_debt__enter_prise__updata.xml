@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtmanagpreson.Debt_EnterPrise_Updata">
+
+    <LinearLayout
+        android:id="@+id/title_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_title_left_up"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/debt_preson_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="编辑债事机构"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/light_gray"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="提示：同颜色*为一组问题，至少填写全一组问题"
+            android:textColor="#666"
+            android:textSize="13sp" />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_2"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="企业全称"
+                    android:drawableRight="@mipmap/xing_b"
+
+                    />
+
+
+                <EditText
+                    android:id="@+id/et_enterprise_name_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入准确的企业全称" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line2"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_3"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="企业证号"
+                    android:drawableRight="@mipmap/xing_b"
+
+                    />
+                <EditText
+                    android:id="@+id/et_enterprise_code_up"
+                    style="@style/editeText_style_2"
+                    android:hint="三证合一代码" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line3"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_4"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="企业所属地"
+                    android:drawableRight="@mipmap/xing_b"
+                    />
+
+                <TextView
+                    android:id="@+id/et_enterprise_area_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择企业所属地" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line4"
+                style="@style/line_5dp" />
+
+
+
+            <View
+                android:id="@+id/view_debt2_demand_line5"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_6"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="法人姓名"
+                    android:drawableRight="@mipmap/xing_o"
+                    />
+
+
+                <EditText
+                    android:id="@+id/et_legal_name_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入真实的法人姓名" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line6"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_7"
+                style="@style/ll_style_magin_edite"
+
+                >
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="身份证号"
+                    android:drawableRight="@mipmap/xing_o"
+                    />
+
+                <EditText
+                    android:id="@+id/et_legal_code_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入企业法人身份证号" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line7"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_8"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="联系电话"
+                    android:drawableRight="@mipmap/xing_o"
+                    />
+
+                <EditText
+                    android:id="@+id/et_legal_phone_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入企业法人手机号" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line8"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_9"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="法人所属地"
+                    android:drawableRight="@mipmap/xing_o"
+                    />
+
+
+                <TextView
+                    android:id="@+id/et_legal_adress_up"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择法人所属地" />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_10"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="详细地址"
+                    android:drawableRight="@mipmap/xing_o"
+                    />
+
+                <EditText
+                    android:id="@+id/et_legal_detaile_adress_up"
+                    style="@style/editeText_style_2"
+                    android:hint="填写街道,门牌号" />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="所属行业类型"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_blong_type_up"
+                    style="@style/editeText_style_2"
+                    android:hint="(必填)如刚材,制造..." />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="上游行业类型"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_up_type_up"
+                    style="@style/editeText_style_2"
+                    android:hint="(必填)如刚材,制造..." />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="下游行业类型"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_down_type_up"
+                    style="@style/editeText_style_2"
+                    android:hint="(必填)如刚材,制造..." />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_debt_enter_updata"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/enter_prise_save_up"
+        style="@style/page_bottom_button_style"
+        android:text="保存" />
+
+</LinearLayout>

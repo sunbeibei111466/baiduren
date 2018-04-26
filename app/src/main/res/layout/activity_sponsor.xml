@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.Sponsor">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f5f5f5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_debt4_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbat_H"
+                android:background="@color/white"
+                android:orientation="horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_debt4_sponsor_back"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/back_finish" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/toolbar_textview_style"
+                    android:text="担保人"
+                    android:textColor="@color/light_hei" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="姓名" />
+
+                <EditText
+                    android:id="@+id/et_sponsor_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入担保人真实姓名" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="身份证号" />
+
+                <EditText
+                    android:id="@+id/et_sponsor_code"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入担保人身份证号" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="手机号" />
+
+                <EditText
+                    android:id="@+id/et_sponsor_phone"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入担保人手机号"
+                    android:inputType="phone"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="所属地" />
+
+                <TextView
+                    android:id="@+id/tv_sponsor_ssd"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入担保人所属地" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="详细地址" />
+
+                <EditText
+                    android:id="@+id/et_sponsor_xxdz"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入担保人详细地址" />
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_sponsor_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_sponsor_baocun"
+        style="@style/page_bottom_button_style"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</android.support.constraint.ConstraintLayout>

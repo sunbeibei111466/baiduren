@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center_horizontal"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtbunesshall.DebtQuerry_BunessHall">
+
+    <LinearLayout
+        android:id="@+id/title_buness_hall_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/supply_recher_finish"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/supply_recher_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="center"
+            android:text="搜索"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+
+        </android.support.v4.widget.Space>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        style="@style/line_height_0_5dp_style" />
+
+    <RadioGroup
+        android:id="@+id/group_pa"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/hall_radio1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true"
+            android:text="供应端" />
+
+        <RadioButton
+            android:id="@+id/hall_radio2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="100dp"
+            android:text="需求端" />
+    </RadioGroup>
+    <LinearLayout
+        android:id="@+id/debt_type_line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="20dp"
+            android:text="请选债事类型"
+            android:textColor="#666"
+            android:textSize="14sp" />
+        <com.yl.baiduren.view.MyRecyclerView
+            android:id="@+id/supply_serch_texttype"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingEnd="10dp"
+            android:paddingStart="10dp" />
+    </LinearLayout>
+
+
+    <TextView
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="20dp"
+        android:text="请选择资产类型"
+        android:textColor="#666"
+        android:textSize="14sp" />
+
+    <com.yl.baiduren.view.MyRecyclerView
+        android:id="@+id/supply_serch_textList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingEnd="10dp"
+        android:paddingStart="10dp" />
+
+    <Button
+        android:id="@+id/btn_recher_sousuo"
+        android:layout_width="70dp"
+        android:layout_height="26dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/send_ma"
+        android:text="搜索"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/search_supply_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f5f5f5"
+        app:isLoadMore="true"
+        app:overlay="true"
+        app:progress_colors="@array/material_colors"
+        app:wave_color="#90ffffff"
+        app:wave_height_type="higher"
+        app:wave_show="true">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/serch_supply_recyclview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.cjj.MaterialRefreshLayout>
+
+</LinearLayout>

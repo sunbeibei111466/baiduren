@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_investment_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <RelativeLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        android:id="@+id/tv_investment"
+                        style="@style/creditor_rights_information"
+                        android:text="投资项目" />
+
+                    <EditText
+                        android:id="@+id/et_investment_projects"
+                        style="@style/creditor_rights_information_editView"
+                        android:layout_toRightOf="@+id/tv_investment"
+                        android:hint="请输入项目名称" />
+
+                    <ImageView
+                        android:id="@+id/iv_add_new_project"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/add" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout
+                    style="@style/creditor_rights_information_ll"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="股东姓名" />
+
+                    <EditText
+                        android:id="@+id/et_shareholder"
+                        style="@style/creditor_rights_information_editView"
+                        android:layout_toRightOf="@+id/tv_investment"
+                        android:hint="请输入项目的股东" />
+
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout
+                    style="@style/creditor_rights_information_ll"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="投资金额" />
+
+                    <EditText
+                        android:id="@+id/et_investment_money"
+                        style="@style/creditor_rights_information_editView"
+                        android:layout_toRightOf="@+id/tv_investment"
+                        android:hint="请输入投资金额" />
+
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout
+                    style="@style/creditor_rights_information_ll"
+                    android:paddingStart="16dp">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="股份占比" />
+
+                    <EditText
+                        android:id="@+id/et_share_ratio"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="%" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout
+                    style="@style/creditor_rights_information_ll"
+                    android:paddingStart="16dp">
+
+                    <Button
+                        android:id="@+id/bt_investment_complete"
+                        style="@style/button_drawble_style_biankuan"
+                        android:text="保存" />
+                </LinearLayout>
+
+                <View style="@style/line_height_6dp_style" />
+
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyExpandListView
+                android:id="@+id/list_parent_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:groupIndicator="@null">
+
+            </com.yl.baiduren.view.MyExpandListView>
+        </LinearLayout>
+
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/but_invest"
+        style="@style/page_bottom_button_style"
+        android:text="提交" />
+
+</LinearLayout>

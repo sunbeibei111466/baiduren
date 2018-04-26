@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.SponsorDetails">
+
+
+    <LinearLayout
+        android:id="@+id/ll_currency_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/demend_details_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="债权人需求详情"
+            android:textColor="@color/light_hei" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/demend_details_updata"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_details_1"
+        style="@style/line_height_0_5dp_style"
+        app:layout_constraintTop_toBottomOf="@id/ll_currency_details_toolbar">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/view_details_1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="类别:" />
+
+                <TextView
+                    android:id="@+id/demned_type"
+                    style="@style/editeText_style_2"
+                    />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="名称:" />
+
+                <TextView
+                    android:id="@+id/demend_name"
+                    style="@style/editeText_style_2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="估值:" />
+
+                <TextView
+                    android:id="@+id/demend_guzhi"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="地区" />
+
+                <TextView
+                    android:id="@+id/demend_area"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="资产描述:" />
+
+                <TextView
+                    android:id="@+id/demend_misu"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/demnd_details_imagelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

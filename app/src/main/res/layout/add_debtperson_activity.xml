@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="添加债事人"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+           >
+        </Space>
+    </LinearLayout>
+
+    <View
+        app:layout_constraintTop_toBottomOf="@id/title_bar_layout"
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="5dp"
+        android:background="@color/light_gray" />
+
+    <LinearLayout
+
+        android:id="@+id/id_ly_bottombar"
+        android:layout_width="fill_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        >
+
+        <RelativeLayout
+            android:id="@+id/btn_Wf1"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+            <TextView
+                android:id="@+id/txt_Wf1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                />
+            <RelativeLayout
+                android:id="@+id/line_Wf1"
+                android:layout_alignParentBottom="true"
+                android:layout_alignBottom="@id/txt_Wf1"
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"/>
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/btn_Wf2"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:paddingLeft="40dp"
+            android:paddingRight="40dp"
+            >
+            <TextView
+                android:id="@+id/txt_Wf2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:textColor="@color/light_black"
+                android:textSize="18sp"
+                />
+
+            <RelativeLayout
+                android:id="@+id/line_Wf2"
+                android:background="@color/blue"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentStart="true"
+                />
+        </RelativeLayout>
+    </LinearLayout>
+
+
+    <android.support.v4.view.ViewPager
+        android:id="@+id/vp_tjzrr"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </android.support.v4.view.ViewPager>
+</LinearLayout>

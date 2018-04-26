@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f5f5f5"
+    tools:context="com.yl.baiduren.activity.mypager.PersonalInformation">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/title_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbat_H"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_personal_title_left"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:src="@mipmap/back_finish" />
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/title_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="个人资料"
+                android:textColor="@color/light_hei"
+                android:textSize="@dimen/toolbar_textSize"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <TextView
+                    android:id="@+id/iv_personal_title_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center"
+                    android:text="编辑"
+                    android:textColor="@color/blue"
+                    android:textSize="16sp" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingEnd="20dp"
+            android:paddingStart="20dp">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="3"
+                android:text="头像"
+                android:textColor="@color/light_hei"
+                android:textSize="16sp" />
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_user_image"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_alignParentRight="true"
+                    android:src="@mipmap/my_image_b" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="用户名" />
+
+            <TextView
+                android:id="@+id/tv_userName_preson"
+                style="@style/editeText_style_2_personal"
+                />
+
+        </LinearLayout>
+
+        <!--昵称-->
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="昵称" />
+
+            <EditText
+                android:id="@+id/ed_personal_nicheng"
+                style="@style/editeText_style_2_personal"
+                />
+
+        </LinearLayout>
+
+
+
+        <!--真实姓名-->
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+
+                style="@style/textView_style_personal"
+                android:text="真实姓名" />
+
+            <EditText
+                android:id="@+id/et_personal_name"
+                style="@style/editeText_style_2_personal"
+                />
+
+        </LinearLayout>
+
+        <!--身份证号码-->
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="身份证号码" />
+
+            <EditText
+                android:id="@+id/et_personal_code"
+                style="@style/editeText_style_2_personal"
+
+                />
+
+        </LinearLayout>
+
+        <!--所属地-->
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="所属地" />
+
+            <TextView
+                android:id="@+id/et_personal_address"
+                style="@style/editeText_style_2_personal"
+
+                />
+
+        </LinearLayout>
+
+        <!--详细地址-->
+        <LinearLayout
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="详细地址" />
+
+            <EditText
+                android:id="@+id/et_personal_xx_address"
+                style="@style/editeText_style_2_personal"
+
+                />
+
+        </LinearLayout>
+
+        <!--手机号-->
+        <LinearLayout
+            android:id="@+id/ll_updataPhone"
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="手机号" />
+
+            <TextView
+                android:id="@+id/tv_personal_phone"
+                style="@style/editeText_style_2_personal"
+
+                />
+
+        </LinearLayout>
+
+
+        <!--手机号-->
+        <LinearLayout
+            android:id="@+id/ll_updataPhone_by"
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                style="@style/textView_style_personal"
+                android:text="备用手机号" />
+
+            <TextView
+                android:id="@+id/tv_personal_phone_by"
+                style="@style/editeText_style_2_personal"
+                />
+
+        </LinearLayout>
+        <!--修改密码-->
+        <LinearLayout
+            android:id="@+id/ll_updataPass"
+            style="@style/my_ll_style"
+            android:layout_marginTop="2dp"
+            android:paddingEnd="20dp">
+
+            <TextView
+                android:id="@+id/tv_personal_updata_password"
+                style="@style/textView_style_personal"
+                android:text="修改密码" />
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_esc"
+        style="@style/page_bottom_button_style"
+        android:layout_alignParentBottom="true"
+        android:text="退出登陆" />
+
+
+</RelativeLayout>

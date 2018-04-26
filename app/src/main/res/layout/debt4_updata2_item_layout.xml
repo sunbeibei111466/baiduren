@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="担保人姓名" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_dbr"
+                style="@style/editeText_style_2"
+                android:hint="请输入担保人姓名" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_chjine"
+                style="@style/debt4_updata1_textView_style"
+                android:text="身份证号" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_code"
+                style="@style/editeText_style_2"
+                android:hint="请输入担保人身份证号" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="身份证号" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_phonee"
+                style="@style/editeText_style_2"
+                android:hint="请输入担保人手机号" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="地区" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_dbr_diqu"
+                style="@style/editeText_style_2"
+                android:hint="请输入担保人省市区(区)" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_5"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="详细地址" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_dbr_xxdq"
+                style="@style/editeText_style_2"
+                android:hint="请输入担保人手机号" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_imageList"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/bt_debt4_updata2_complete"
+                style="@style/button_drawble_style_biankuan"
+                android:text="完成" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

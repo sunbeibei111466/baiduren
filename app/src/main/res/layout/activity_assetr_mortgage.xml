@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.AssetrMortgage">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/f5f5f5">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_debt4_toolbar"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/toolbat_H"
+                android:background="@color/white"
+                android:orientation="horizontal"
+
+                >
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:id="@+id/iv_debt4_currency_back"
+                        android:layout_width="24dp"
+                        android:layout_height="24dp"
+                        android:src="@mipmap/back_finish" />
+
+                </LinearLayout>
+
+                <TextView
+                    style="@style/toolbar_textview_style"
+                    android:text="资产抵押"
+                    android:textColor="@color/light_hei" />
+
+                <Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="资产名称" />
+
+                <EditText
+                    android:id="@+id/et_assetr_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入资产名称" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="数量" />
+
+                <EditText
+                    android:id="@+id/et_assetr_num"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入资产数量"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估价值" />
+
+                <EditText
+                    android:id="@+id/et_asster_jiazhi"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入资产评估的金额"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_style_magin_edite"
+                android:layout_marginTop="4dp">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估机构" />
+
+                <EditText
+                    android:id="@+id/et_assert_jigou"
+                    style="@style/editeText_style_2"
+                    android:hint="个人/机构" />
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_assic_mortgage_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_debt4_asstre"
+        style="@style/page_bottom_button_style"
+        android:text="保存"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+
+</android.support.constraint.ConstraintLayout>

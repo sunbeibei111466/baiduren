@@ -1,0 +1,214 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtmanagpreson.Debt_EnterPrise_Details">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_enter_left"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/debt_enter_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text=""
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/editor_enter_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/light_black" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:id="@+id/line1"
+                style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="企业全称" />
+
+                <TextView
+                    android:id="@+id/tv_enter_name"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line2"
+                style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="企业证号" />
+
+                <TextView
+                    android:id="@+id/tv_enter_code"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line3"
+                style="@style/line_style"
+                app:layout_constraintTop_toBottomOf="@id/line2">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="企业所属地" />
+
+                <TextView
+                    android:id="@+id/tv_enter_area"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/line4"
+                style="@style/line_style"
+                app:layout_constraintTop_toBottomOf="@id/line3">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="法人姓名" />
+
+                <TextView
+                    android:id="@+id/tv_enter_fr_name"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="身份证号" />
+
+                <TextView
+                    android:id="@+id/tv_enter_idcord"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="联系电话" />
+
+                <TextView
+                    android:id="@+id/tv_enter_phone"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="法人所属地" />
+
+                <TextView
+                    android:id="@+id/tv_enter_fr_area"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="详细地址" />
+
+                <TextView
+                    android:id="@+id/tv_enter_address"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="所属行业类型" />
+
+                <TextView
+                    android:id="@+id/tv_enter_hy_type"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="上游行业类型" />
+
+                <TextView
+                    android:id="@+id/tv_enter_sy_type"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line_style">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="上游行业类型" />
+
+                <TextView
+                    android:id="@+id/tv_enter_xy_type"
+                    style="@style/textView_style9" />
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/detail_enter_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="20dp" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>

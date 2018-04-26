@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:gravity="center_horizontal">
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_feed_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/debt_details_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="意见反馈"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            >
+        </android.support.v4.widget.Space>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/light_gray"
+        android:gravity="center_vertical"
+        android:textColor="@color/blue"
+        android:textSize="12sp"
+        android:paddingStart="20dp"
+        android:text="您有什么意见或建议想对我们说？"
+
+        />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@color/white"
+        android:padding="10dp">
+        <EditText
+            android:id="@+id/et_opinion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:hint="我们会及时处理您反馈的问题..."
+            android:textSize="16sp"
+            />
+    </LinearLayout>
+    <Button
+        android:id="@+id/feed_back_comfit"
+        android:layout_marginTop="50dp"
+        android:layout_width="300dp"
+        android:layout_height="36dp"
+        android:background="@drawable/login_button_shape"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:text="提交"/>
+
+
+</LinearLayout>

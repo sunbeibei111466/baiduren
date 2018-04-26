@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_child_title_left"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/child_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:textColor="@color/light_hei"
+            android:textSize="@dimen/toolbar_textSize"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <!--手机号-->
+    <LinearLayout
+        android:id="@+id/ll_updataPhone"
+        style="@style/my_child_style"
+        android:layout_marginTop="2dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            style="@style/my_ll_textView_style"
+            android:text="修改手机号" />
+
+
+    </LinearLayout>
+
+    <!--修改密码-->
+    <LinearLayout
+        android:id="@+id/ll_child_updataPass"
+        style="@style/my_child_style"
+        android:layout_marginTop="2dp"
+        android:paddingEnd="20dp">
+
+        <TextView
+            android:id="@+id/child_updata_parrword"
+            style="@style/my_ll_textView_style"
+            android:text="修改密码" />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        style="@style/my_child_style"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/tv_child_record"
+            style="@style/my_ll_textView_style"
+            android:text="子账号备案" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_child_style"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/tv_child_order"
+            style="@style/my_ll_textView_style"
+            android:text="子账号摘牌" />
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/my_child_style"
+        android:layout_marginTop="4dp">
+
+        <TextView
+            android:id="@+id/tv_child_about"
+            style="@style/my_ll_textView_style"
+            android:text="子账号债事人" />
+    </LinearLayout>
+
+
+</LinearLayout>

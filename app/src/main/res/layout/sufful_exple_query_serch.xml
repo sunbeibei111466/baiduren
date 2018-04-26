@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtbunesshall.DebtQuerry_BunessHall">
+
+    <LinearLayout
+        android:id="@+id/title_buness_hall_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/sussful_finish"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <EditText
+            android:id="@+id/et_sufful_content"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="7"
+            android:gravity="center_vertical"
+            android:hint="身份证号/姓名/机构名"
+            android:paddingLeft="10dp"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/btn_sussful_sousuo"
+                android:layout_width="50dp"
+                android:layout_height="25dp"
+                android:background="@drawable/send_ma"
+                android:text="搜索"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view"
+        style="@style/line_height_0_5dp_style" />
+
+    <LinearLayout
+        android:id="@+id/line"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/view">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:text="历史搜索"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.5"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/sufful_delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@mipmap/delete" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <com.yl.baiduren.view.MyRecyclerView
+        android:id="@+id/sufful_serch_textList"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingStart="10dp"
+        android:paddingEnd="10dp"
+        />
+
+    <com.cjj.MaterialRefreshLayout
+        android:id="@+id/search_sufful_refresh"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:isLoadMore="true"
+        app:overlay="true"
+        app:progress_colors="@array/material_colors"
+        app:wave_color="#90ffffff"
+        app:wave_height_type="higher"
+        app:wave_show="true"
+        >
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/serch_sufful_recyclview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </com.cjj.MaterialRefreshLayout>
+
+</LinearLayout>

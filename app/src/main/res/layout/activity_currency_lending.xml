@@ -1,0 +1,355 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtrecord.CurrencyLending">
+
+    <LinearLayout
+        android:id="@+id/ll_debt4_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_debt4_currency_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="货币借贷"
+            android:textColor="@color/light_hei" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="@color/f5f5f5"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="币种"
+                    />
+
+                <EditText
+                    android:id="@+id/et_currency_bizhong"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入币种"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="本金(元)"
+                    />
+
+                <EditText
+                    android:id="@+id/et_currency_benjin"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入本金(元)"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="利息(%)"
+                    />
+
+                <EditText
+                    android:id="@+id/et_currency_lixi"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入利息(%)"
+                    android:inputType="numberDecimal"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="放款日期"
+                    />
+
+                <TextView
+                    android:id="@+id/et_currency_fang_k"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择放款日期"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="是否结算过"
+                    />
+
+                <RadioGroup
+                    android:id="@+id/rg_currency"
+                    style="@style/editeText_style_2"
+                    android:orientation="horizontal"
+                    >
+                    <RadioButton
+                        android:id="@+id/rb_currency_yer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="是"
+                        />
+                    <RadioButton
+                        android:id="@+id/rb_currency_no"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="否"
+                        android:checked="true"
+                        android:layout_marginStart="20dp"
+                        />
+                </RadioGroup>
+
+            </LinearLayout>
+
+            <android.support.constraint.ConstraintLayout
+                android:id="@+id/cl_currency_add"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="40dp"
+                android:paddingEnd="40dp"
+                android:visibility="gone"
+                >
+
+                <TextView
+                    android:id="@+id/tv_c1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="结算日期:"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_hei"
+                    />
+
+                <TextView
+                    android:id="@+id/et_currency_js_time"
+                    android:layout_width="200dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="10dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    app:layout_constraintStart_toEndOf="@id/tv_c1" />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai"
+                    app:layout_constraintTop_toBottomOf="@id/tv_c1" />
+
+                <TextView
+                    android:id="@+id/tv_c2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:text="结算金额:"
+                    android:gravity="center"
+                    android:textSize="15sp"
+                    android:textColor="@color/light_hei"
+                    app:layout_constraintTop_toBottomOf="@id/tv_c1"
+                    />
+                <EditText
+                    android:id="@+id/et_currency_js_jine"
+                    android:layout_width="140dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:gravity="center_vertical"
+                    android:textSize="14sp"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintTop_toBottomOf="@id/et_currency_js_time"
+                    app:layout_constraintStart_toEndOf="@id/tv_c2"
+                    android:inputType="number"
+                    />
+
+                <View
+                    android:layout_width="200dp"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai"
+                    app:layout_constraintTop_toBottomOf="@id/tv_c2" />
+
+                <Button
+                    android:id="@+id/bt_currency_seva"
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:background="@drawable/debt_button_back"
+                    android:gravity="center"
+                    android:text="保存"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp"
+                    android:layout_marginTop="4dp"
+                    app:layout_constraintStart_toEndOf="@id/et_currency_js_jine"
+                    app:layout_constraintTop_toBottomOf="@id/tv_c1"
+                    />
+
+                <LinearLayout
+                    android:id="@+id/ll_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="32dp"
+                    app:layout_constraintTop_toBottomOf="@id/tv_c2"
+                    android:layout_marginTop="10dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="结算日期"
+                        android:background="@drawable/currency_lending_drawable"
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="结算金额"
+                        android:background="@drawable/currency_lending_drawable"
+
+                        />
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="1"
+                        android:gravity="center"
+                        android:text="操作"
+                        android:background="@drawable/currency_lending_drawable"
+                        />
+
+                </LinearLayout>
+
+                <com.yl.baiduren.view.MyRecyclerView
+                    android:id="@+id/recyclerView_currency"
+                    android:background="@color/white"
+                    app:layout_constraintTop_toBottomOf="@id/ll_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                </com.yl.baiduren.view.MyRecyclerView>
+
+            </android.support.constraint.ConstraintLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="截至日期"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_currency_jiezhi_time"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择还款截至日期"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="已还合计"
+                    />
+
+                <EditText
+                    android:id="@+id/et_currency_yihuan"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入已还全部金额数(元)"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="未还余额"
+                    />
+
+                <EditText
+                    android:id="@+id/et_currency_weihuan"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入未还余额(元)"
+                    android:inputType="number"
+                    />
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_currency_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/bt_currency_baoc"
+        style="@style/page_bottom_button_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="保存" />
+
+</LinearLayout>

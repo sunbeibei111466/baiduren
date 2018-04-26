@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="toolbat_H">50dp</dimen>
+    <dimen name="toolbar_textSize">20sp</dimen>
+    <dimen name="debt_pro_padding">8dp</dimen>
+    <dimen name="image">40dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+</resources>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    >
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:paddingEnd="20dp"
+        android:gravity="center_vertical"
+        >
+        <ImageView
+            android:id="@+id/iv_skip_guide1"
+            android:onClick="skip"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/guidel_skip"
+            android:layout_alignParentEnd="true"
+
+            />
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center"
+        android:padding="30dp"
+        >
+        <ImageView
+            android:padding="10dp"
+            android:id="@+id/iv_text_guide1"
+            android:layout_width="wrap_content"
+            android:layout_height="70dp"
+            android:src="@mipmap/guidel1_text"
+            />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="5"
+        android:gravity="center"
+        android:padding="20dp"
+        >
+        <ImageView
+            android:id="@+id/iv_guide1_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/guidel1_image_preson"
+            />
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:gravity="center_horizontal"
+        >
+
+        <ImageView
+            android:id="@+id/iv_next"
+            android:onClick="next"
+            android:layout_width="100dp"
+            android:layout_height="40dp"
+            android:src="@mipmap/guidle1_strat" />
+"
+            />
+
+    </LinearLayout>
+
+
+</LinearLayout>

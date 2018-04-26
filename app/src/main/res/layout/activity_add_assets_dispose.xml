@@ -1,0 +1,340 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.asster_dispose.AddAssetsDispose">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/add_dispose_fish"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="上传资产"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        style="@style/line_5dp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/upload_supply_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_1"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="主体类型"
+
+                    />
+
+                <RadioGroup
+                    android:id="@+id/rg_type"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="7"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_gr"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="个人" />
+
+                    <RadioButton
+                        android:id="@+id/rb_qy"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="10dp"
+                        android:text="企业" />
+
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_0"
+                style="@style/ll_style_magin_edite"
+
+
+                >
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="公司" />
+
+                <EditText
+                    android:id="@+id/tv_enterprise_name"
+                    android:layout_height="match_parent"
+                    android:layout_width="0dp"
+                    android:layout_weight="7"
+                    android:hint="请输入公司名称"
+                    android:background="@null"
+                    android:textSize="16sp"
+                    android:paddingStart="10dp"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_xian0"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="选择报告"
+
+                    />
+
+                <TextView
+                    android:id="@+id/select_report"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="请选择您购买的报告" />
+
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_5"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="类型"
+
+                    />
+
+                <TextView
+                    android:id="@+id/tv_assict_type"
+                    style="@style/editeText_style_weight_7"
+                    android:hint="请选择资产类型"
+                    />
+
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_6"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="名称 "
+
+                    />
+
+                <EditText
+                    android:id="@+id/tv_assict_name"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="可供应资产名称" />
+
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="数量"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_asstes_num"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="请填写数量"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line6"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_7"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="估值"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_asster_guzhi"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="请填写估值"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line7"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_8"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估机构"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_asster_jigou"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="个人/机构" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line8"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_9"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="归属地" />
+
+                <TextView
+                    android:id="@+id/tv_asstes_area"
+                    style="@style/editeText_style2_weight_7"
+                    android:hint="请选择资产归属地" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line10"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_10"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style"
+                    android:text="详细描述" />
+
+                <TextView
+                    android:id="@+id/xxmiaoshu"
+                    style="@style/editeText_style_2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center_vertical"
+                    android:hint="请填写详细描述"
+                    android:textColor="@color/light_hei"
+                    android:textSize="16sp" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <ImageView
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@mipmap/right_arrow" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.yl.baiduren.view.MyGridView
+                    android:id="@+id/gv_asster_upload_photo"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="20dp"
+                    android:layout_marginLeft="6dp"
+                    android:layout_marginRight="6dp"
+                    android:layout_marginTop="10dp"
+                    android:horizontalSpacing="10dp"
+                    android:numColumns="4"
+                    android:scrollbars="none"
+                    android:verticalSpacing="10dp" />
+            </RelativeLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_upload"
+        style="@style/page_bottom_button_style"
+        android:text="上传" />
+
+</LinearLayout>

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+
+    >
+    <RelativeLayout
+        android:layout_marginTop="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="6dp"
+        android:background="@color/white">
+
+    <TextView
+        android:id="@+id/tv_apply_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="申请主体:"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/light_hei"
+        />
+
+    <TextView
+        android:id="@+id/tv_applyName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_toRightOf="@+id/tv_apply_title"
+        android:layout_marginStart="4dp"
+        android:textColor="@color/light_hei"
+        />
+
+    <TextView
+        android:id="@+id/tv_apply_tiem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="申请时间:"
+        android:textSize="16sp"
+        android:layout_marginStart="4dp"
+        android:layout_below="@+id/tv_apply_title"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/light_hei"
+        />
+
+    <TextView
+        android:id="@+id/apply_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_toRightOf="@+id/tv_apply_tiem"
+        android:layout_marginStart="4dp"
+        android:layout_below="@+id/tv_applyName"
+        android:layout_marginTop="5dp"
+        android:textColor="@color/light_hei"
+        />
+        <TextView
+            android:id="@+id/tv_retrun_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_apply_tiem"
+            android:textSize="16sp"
+            android:text="回复状态:"
+            android:textColor="@color/light_hei"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="4dp"
+            />
+        <TextView
+            android:id="@+id/return_status"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/tv_apply_tiem"
+            android:textSize="16sp"
+            android:textColor="@color/blue"
+            android:layout_toRightOf="@id/tv_retrun_status"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="4dp"
+            />
+        <TextView
+            android:id="@+id/apply_season"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:text="申请原因:"
+            android:textColor="@color/light_hei"
+            android:layout_below="@id/tv_retrun_status"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="4dp"/>
+        <TextView
+            android:id="@+id/reson"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/return_status"
+            android:layout_toRightOf="@id/apply_season"
+            android:layout_marginTop="5dp"
+            android:layout_marginStart="4dp"
+            android:textSize="16sp"
+            android:textColor="@color/light_hei"/>
+
+    </RelativeLayout>
+
+</LinearLayout>

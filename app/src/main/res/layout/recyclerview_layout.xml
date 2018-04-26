@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_share_adapter_item_1"
+            style="@style/adapter_item_layout_ll">
+
+            <TextView
+                style="@style/creditor_rights_information"
+                android:text="股东姓名" />
+
+            <TextView
+                android:id="@+id/et_recycler_adapter_name"
+                style="@style/creditor_rights_information_editView"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_recycler2"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_share_adapter_item_1"
+            >
+
+            <TextView
+                style="@style/creditor_rights_information"
+                android:text="投资金额" />
+
+            <TextView
+                android:id="@+id/et_recycler_adapter_jine"
+                style="@style/creditor_rights_information_editView"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_recycler2"
+            >
+
+            <TextView
+                style="@style/creditor_rights_information"
+                android:text="股份占比" />
+
+            <TextView
+                android:id="@+id/et_recycler_adapter_scale"
+                style="@style/creditor_rights_information_editView"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_recycler_adapter_delete"
+            android:layout_width="18dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/delete"
+            />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

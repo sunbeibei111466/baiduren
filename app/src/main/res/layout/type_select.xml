@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RadioGroup
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    android:paddingStart="4dp"
+    android:paddingEnd="4dp"
+    android:gravity="center"
+    android:id="@+id/rg_parent"
+    >
+
+    <RadioButton
+        android:id="@+id/rb_gr"
+        style="@style/type_select"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_jg"
+        style="@style/type_select"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_yh"
+        style="@style/type_select"
+        />
+
+    <RadioButton
+        android:id="@+id/rb_zf"
+        style="@style/type_select"
+        />
+
+</RadioGroup>

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/about_us_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="关于我们"
+            android:textColor="@color/light_hei"
+            android:textSize="@dimen/toolbar_textSize"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+        </android.support.v4.widget.Space>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_below="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+        <ImageView
+
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:src="@mipmap/logo"/>
+        <TextView
+            android:layout_marginTop="10dp"
+            android:id="@+id/verson_code"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_marginTop="20dp"
+            android:id="@+id/tv_content"
+            android:layout_marginStart="40dp"
+            android:layout_marginEnd="40dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="       斟行APP是佳信众创大数据公司为中国债事人摆脱债务危机而打造的一个专业、方便、实用的债务处理平台。公司定位于中国债务处理市场体系建设的倡导者与合规运营的实践者。平台与银行、资产公司等资产端合作，与法院、律师协会、律师事务所等解债专业机构合作，与征信公司、资产评估机构、财务审计公司等为债事提供各种服务的机构合作，与解债团队、个体从业者合作。采集政府、银行、企业、个人的债务数据、资产数据，通过对收集到的大数据清洗、甄别，以数据为基础以技术为核心，以政府为依托，以解债为目的。利用债事商城销售去库存，利用资产交易、权益交易盘活企业的资产，利用债务人关系匹配、需求匹配达到高效率、低成本的技术解债。斟行是债务处理的理想工具！"/>
+
+    </LinearLayout>
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:layout_marginBottom="5dp"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="佳信众创大数据有限公司"
+        android:textSize="14sp"/>
+    <TextView
+        android:layout_below="@+id/tv"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="Copyright © 2018" />
+
+</LinearLayout>
+
+
+
+
+
+</RelativeLayout>

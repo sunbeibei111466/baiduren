@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_liabities_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="债权方名称" />
+
+                    <EditText
+                        android:id="@+id/et_liabilities_name"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="姓名/企业名" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="证件号" />
+
+                    <EditText
+                        android:id="@+id/et_liabilities_code"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="身份证号/企业组织机构代码" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="联系电话" />
+
+                    <EditText
+                        android:id="@+id/et_liabilities_phone"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="债权方手机"
+                        android:inputType="phone"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="所属地" />
+
+                    <TextView
+                        android:id="@+id/et_liabilities_address"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请选择所属地" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="详细地址" />
+
+                    <EditText
+                        android:id="@+id/et_liabilities_xx_address"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请输入地址街区，门牌号" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="负债金额" />
+
+                    <EditText
+                        android:id="@+id/et_liabilities_jine"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="元"
+                        android:inputType="number"/>
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="负债时间" />
+
+                    <TextView
+                        android:id="@+id/et_liabilities_time"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请选择负债时间" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <Button
+                        android:id="@+id/bt_liabilities_complete"
+                        style="@style/button_drawble_style_biankuan"
+                        android:text="保存" />
+                </LinearLayout>
+
+                <View style="@style/line_height_6dp_style" />
+
+
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/rv_liabilities"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/liabilities"
+        style="@style/page_bottom_button_style"
+        android:layout_alignParentBottom="true"
+        android:text="提交" />
+
+</LinearLayout>

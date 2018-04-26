@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_debt3_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbat_H"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/detail_back"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/back_finish" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/toolbar_textview_style"
+                android:text="详情"
+                android:textColor="@color/light_hei" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_details_1"
+            style="@style/line_height_0_5dp_style">
+
+        </View>
+
+        <RelativeLayout
+            android:id="@+id/relative_image"
+            android:layout_width="match_parent"
+            android:layout_height="160dp"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="10dp">
+            <ImageView
+                android:id="@+id/detail_image"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                />
+            <ImageView
+                android:id="@+id/left_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentLeft="true"
+                android:layout_marginStart="15dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/left"/>
+            <ImageView
+                android:id="@+id/right_image"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginEnd="15dp"
+                android:layout_centerVertical="true"
+                android:src="@mipmap/right"/>
+        </RelativeLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="编号:" />
+
+                <TextView
+                    android:id="@+id/supply_num"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="类型:" />
+
+                <TextView
+                    android:id="@+id/supply_type"
+                    style="@style/editeText_style_2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="名称:" />
+
+                <TextView
+                    android:id="@+id/supply_name"
+                    style="@style/editeText_style_2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="数量:" />
+
+                <TextView
+                    android:id="@+id/supply_shuliang"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="估值" />
+
+                <TextView
+                    android:id="@+id/supply_guzhi"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估机构:" />
+
+                <TextView
+                    android:id="@+id/supply_jigou"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="归属地:" />
+
+                <TextView
+                    android:id="@+id/supply_area"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/bt_my_supply_detail_delete"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="删除"/>
+        <Button
+            android:id="@+id/my_supply_updata"
+            android:layout_marginStart="1dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="修改"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>

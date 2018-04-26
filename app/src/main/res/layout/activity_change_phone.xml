@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f5f5f5"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.mypager.ChangePhone">
+
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_phone_title_left"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="更改手机号"
+            android:textColor="@color/light_hei"
+            android:textSize="@dimen/toolbar_textSize"
+            android:textStyle="bold" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+        </Space>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_change_1"
+        style="@style/ll_style_magin_edite"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        >
+        <TextView
+            style="@style/textView_style2"
+            android:text="原手机号"
+            />
+
+        <TextView
+            android:id="@+id/tv_change_phone_ole"
+            style="@style/editeText_style"
+            android:hint="请输入新手机号" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_debt1_2"
+        style="@style/ll_style_magin_edite"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        >
+        <TextView
+            style="@style/textView_style2"
+            android:text="新手机号"
+            />
+
+        <EditText
+            android:id="@+id/et_change_phone_new"
+            style="@style/editeText_style"
+            android:hint="请输入新手机号" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_debt1_1"
+        android:background="@color/white"
+        android:layout_marginTop="4dp"
+        style="@style/ll_style_magin_edite">
+
+        <TextView
+            style="@style/textView_style2"
+            android:text="验证码" />
+
+        <EditText
+            android:id="@+id/et_debt1_zw_name"
+            style="@style/editeText_style"
+            android:hint="请输入验证码" />
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2.5"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/bt_change_send"
+                android:layout_width="60dp"
+                android:layout_height="25dp"
+                android:background="@drawable/send_ma"
+                android:gravity="center"
+                android:text="@string/send"
+                android:textColor="@color/white"
+                android:textSize="12sp" />
+        </LinearLayout>
+    </LinearLayout>
+    <Button
+        android:id="@+id/bt_changePhone"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/login_button_shape"
+        android:layout_marginTop="40dp"
+        android:gravity="center"
+        android:text="保存"
+        android:textStyle="bold"
+        android:textColor="#fff"/>
+
+</LinearLayout>

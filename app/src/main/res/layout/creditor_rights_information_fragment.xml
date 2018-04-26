@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:gravity="center"
+        android:text="提示:同颜色*为一组问题，至少填写完一组问题"
+        android:textSize="12sp" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:scrollbars="none">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <LinearLayout
+                android:id="@+id/ll_creditor"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="企业全称" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_enterpriseName"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="(必填)请输入准确的职业全称"/>
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="企业证号" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_enterprise_CardNumber"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_b"
+                        android:hint="三证合一代码" />
+                </LinearLayout>
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="企业所属地" />
+
+                    <TextView
+                        android:id="@+id/et_creditor_belongTo_lndustry"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_b"
+                        android:hint="请选择企业所属地" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="法人姓名" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_legal_person_name"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_o"
+                        android:hint="请填写企业法人姓名" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="身份证号" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_legal_preson_code"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_o"
+                        android:hint="请填写企业法人身份证号" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="联系电话" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_legal_preson_phone"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_o"
+                        android:hint="请填写企业法人手机号" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="法人所属地" />
+
+                    <TextView
+                        android:id="@+id/et_creditor_legal_preson_address"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_o"
+                        android:hint="请选择法人所属地" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="详细地址" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_legal_preson_detailed_address"
+                        style="@style/creditor_rights_information_editView"
+                        android:drawableLeft="@mipmap/xing_o"
+                        android:hint="填写街道,门牌号" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="所属行业类型" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_hylx"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请输入准确的职业全称" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="上游行业类型" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_sy_hylx"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请输入准确的职业全称" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="下游行业类型" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_xy_hylx"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="请输入准确的职业全称" />
+                </LinearLayout>
+
+                <View style="@style/line_height_0_5dp_style" />
+
+                <LinearLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        style="@style/creditor_rights_information"
+                        android:text="简介" />
+
+                    <EditText
+                        android:id="@+id/et_creditor_ylx"
+                        style="@style/creditor_rights_information_editView"
+                        android:hint="(选填)请描述公司简介" />
+                </LinearLayout>
+
+                <ImageView
+                    android:id="@+id/creditor_logo"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/c_logo"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:scaleType="fitXY"
+                    />
+
+            </LinearLayout>
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_creditor"
+        style="@style/page_bottom_button_style"
+        android:layout_below="@+id/ll_creditor"
+        android:text="保存" />
+</LinearLayout>

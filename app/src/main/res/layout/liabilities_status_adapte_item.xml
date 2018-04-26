@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_share_adapter_item_1"
+            style="@style/adapter_item_layout_ll">
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="债权方名称" />
+
+            <TextView
+                android:id="@+id/et_liabilities_adapter_name"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_2"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_share_adapter_item_1"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="证件号" />
+
+            <TextView
+                android:id="@+id/et_liabilities_zjh"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_3"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_2"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="联系电话" />
+
+            <TextView
+                android:id="@+id/et_liabilities_adapter_phone"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_4"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_3"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="所属地" />
+
+            <TextView
+                android:id="@+id/et_liabilities_area"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/ll_5"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_4"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="详细地址" />
+
+            <TextView
+                android:id="@+id/et_liabilities_adapter_address"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_6"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_5"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="负债金额" />
+
+            <TextView
+                android:id="@+id/et_liabilities_amount"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/ll_7"
+            style="@style/adapter_item_layout_ll"
+            android:layout_below="@id/ll_6"
+            >
+
+            <TextView
+                style="@style/textView_style_ass"
+                android:text="负债时间" />
+
+            <TextView
+                android:id="@+id/et_liabilities_adapter_time"
+                style="@style/creditor_rights_information_editView_2"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/iv_liabilities_adaptr_delete"
+            android:layout_width="18dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/delete"
+            />
+    </RelativeLayout>
+</LinearLayout>

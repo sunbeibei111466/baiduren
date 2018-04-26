@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.SponsorDetails">
+
+
+    <LinearLayout
+        android:id="@+id/ll_currency_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_sponsor_details_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="担保人详情"
+            android:textColor="@color/light_hei" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_sponsor_details_updata"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_details_1"
+        style="@style/line_height_0_5dp_style"
+        app:layout_constraintTop_toBottomOf="@id/ll_currency_details_toolbar">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/view_details_1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="姓名" />
+
+                <TextView
+                    android:id="@+id/spone_name"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="手机号" />
+
+                <TextView
+                    android:id="@+id/spone_phone"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="身份证号" />
+
+                <TextView
+                    android:id="@+id/spone_icard"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="所属地" />
+
+                <TextView
+                    android:id="@+id/spone_area"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="详细地址" />
+
+                <TextView
+                    android:id="@+id/spone_adress"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/rv_sponsor_details_imagelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp" />
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

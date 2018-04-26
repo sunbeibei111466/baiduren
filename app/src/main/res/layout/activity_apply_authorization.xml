@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.credit_reporting_queries.ApplyAuthorization">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/title_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@color/white"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/apply_finish"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/back_finish" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/title_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="申请授权"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <android.support.v4.widget.Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_apply_line1"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_1"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="被查询企业名称" />
+
+            <EditText
+                android:id="@+id/et_apply_name"
+                style="@style/editeText_style"
+                android:hint="请输入主体名称" />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_apply_lin2"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_2"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="申请原因" />
+
+            <EditText
+                android:id="@+id/et_apply_reason"
+                style="@style/editeText_style"
+                android:hint="请输入查询原因" />
+
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_apply_line3"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_3"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="申请人姓名" />
+
+            <TextView
+                android:id="@+id/et_applicantName"
+                style="@style/editeText_style"
+                android:hint="" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_apply_ling"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_4"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="申请人身份证号" />
+
+            <TextView
+                android:id="@+id/et_apply_crad"
+                style="@style/editeText_style"
+                android:hint="" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_debt1_line4"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_5"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="手机验证码"/>
+
+            <EditText
+                android:id="@+id/et_apply_yzm"
+                style="@style/editeText_style_width4"
+                android:hint="请输入验证码"
+               />
+
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <Button
+                    android:id="@+id/bt_send_apply"
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:layout_alignBaseline="@+id/yz_code"
+                    android:layout_alignBottom="@+id/yz_code"
+                    android:layout_alignParentEnd="true"
+                    android:background="@drawable/send_ma"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_apply_line5"
+            style="@style/line_5dp" />
+
+        <LinearLayout
+            android:id="@+id/ll_apply_6"
+            style="@style/ll_style_magin_edite">
+
+            <TextView
+                style="@style/textView_style_weight_4"
+                android:text="申请人代表机构" />
+
+            <EditText
+                android:id="@+id/et_apply_agency"
+                style="@style/editeText_style"
+                android:hint="请填写你所代表的机构" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:id="@+id/ll_debt1_11"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center">
+
+        <CheckBox
+            android:id="@+id/checkbox"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:checked="true" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="阅读并同意" />
+
+        <TextView
+            android:id="@+id/user_instructions_apply"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="《国民征信企业信用报告使用协议》"
+            android:textColor="@color/blue" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_apply_tijiao"
+        style="@style/page_bottom_button_style"
+        android:text="提交" />
+
+</LinearLayout>

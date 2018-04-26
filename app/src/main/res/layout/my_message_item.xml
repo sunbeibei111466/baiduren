@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingStart="2dp"
+    android:paddingEnd="2dp"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_marginTop="4dp"
+        android:background="@drawable/yet_claimed_item"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="parent">
+
+
+        <TextView
+            android:id="@+id/mess_debt_state"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="您的备案已被认领" />
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            >
+
+            <TextView
+                android:id="@+id/message_timer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="2017-08-09"
+                android:textColor="@color/creditor_rights"
+                android:textSize="12sp"
+                android:layout_centerVertical="true"
+                />
+
+
+            <TextView
+                android:id="@+id/message_tv"
+                android:layout_width="50dp"
+                android:layout_height="20dp"
+                android:layout_alignParentEnd="true"
+                android:layout_marginLeft="10dp"
+                android:background="@drawable/debt_button_back"
+                android:gravity="center"
+                android:text="查看详情"
+                android:textColor="@color/blue"
+                android:textSize="12sp"
+                android:layout_centerVertical="true"
+                />
+
+        </RelativeLayout>
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_assets_parent"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout style="@style/creditor_rights_information_ll">
+
+                    <TextView
+                        android:id="@+id/tv_investment"
+                        style="@style/creditor_rights_information"
+                        android:text="产业名称" />
+
+                    <EditText
+                        android:id="@+id/et_assets_qiyeName"
+                        style="@style/creditor_rights_information_editView"
+                        android:layout_toRightOf="@+id/tv_investment"
+                        android:hint="请输入企业旗下产业名称" />
+
+                    <ImageView
+                        android:id="@+id/iv_add_new_assets"
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_marginEnd="20dp"
+                        android:src="@drawable/add" />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="@color/light_bai" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+
+                    >
+
+
+                    <RadioGroup
+                        android:id="@+id/et_assets_scale"
+                        style="@style/creditor_rights_information_ll"
+                        android:orientation="horizontal"
+                        android:paddingStart="30dp">
+
+                        <RadioButton
+                            android:id="@+id/rb_assets_shi"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:checked="true"
+                            android:gravity="center"
+                            android:text="固定资产" />
+
+                        <RadioButton
+                            android:id="@+id/rb_assets_fou"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="40dp"
+                            android:gravity="center"
+                            android:text="技术资产" />
+                    </RadioGroup>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/light_bai" />
+
+                    <LinearLayout
+                        style="@style/creditor_rights_information_ll"
+                        android:paddingStart="30dp">
+
+                        <TextView
+                            style="@style/creditor_rights_information"
+                            android:text="资产名称" />
+
+                        <EditText
+                            android:id="@+id/et_assets_name"
+                            style="@style/creditor_rights_information_editView"
+                            android:hint="请输入资产名称" />
+                    </LinearLayout>
+
+                    <View
+                        android:layout_width="match_parent"
+                        android:layout_height="0.5dp"
+                        android:background="@color/light_bai" />
+
+                    <LinearLayout
+                        style="@style/creditor_rights_information_ll"
+                        android:paddingStart="30dp">
+
+                        <TextView
+                            style="@style/creditor_rights_information"
+                            android:text="资产价值" />
+
+                        <EditText
+                            android:id="@+id/et_assets_jiazhi"
+                            style="@style/creditor_rights_information_editView"
+                            android:hint="元" />
+                    </LinearLayout>
+
+                    <View style="@style/line_height_0_5dp_style" />
+
+                    <LinearLayout
+                        style="@style/creditor_rights_information_ll"
+                        android:paddingStart="30dp">
+
+                        <Button
+                            android:id="@+id/bt_assets_complete"
+                            style="@style/button_drawble_style_biankuan"
+                            android:text="保存" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <View style="@style/line_height_6dp_style" />
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyExpandListView
+                android:id="@+id/assets_list"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:groupIndicator="@null">
+
+            </com.yl.baiduren.view.MyExpandListView>
+
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/but_asstes"
+        style="@style/page_bottom_button_style"
+        android:text="提交" />
+</LinearLayout>

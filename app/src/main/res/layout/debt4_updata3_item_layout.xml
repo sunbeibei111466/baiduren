@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="14dp"
+        android:paddingStart="14dp"
+        >
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata3_1"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="资产名称" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata3_assetName"
+                style="@style/editeText_style_2"
+                android:hint="请输入抵押的资产名称" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_2"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/tv_chjine"
+                style="@style/debt4_updata1_textView_style"
+                android:text="单价" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata3_price"
+                style="@style/editeText_style_2"
+                android:hint="请输入资产单价" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata2_3"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="数量" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata2_shulaing"
+                style="@style/editeText_style_2"
+                android:hint="请输入资产数量" />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+        <LinearLayout
+            android:id="@+id/ll_debt4_updata3_4"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:orientation="horizontal">
+
+            <TextView
+                style="@style/debt4_updata1_textView_style"
+                android:text="总价值" />
+
+            <EditText
+                android:id="@+id/et_debt4_updata3_num"
+                style="@style/editeText_style_2"
+                />
+
+        </LinearLayout>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/light_bai" />
+
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/list_imageList_3"
+            android:layout_width="match_parent"
+            android:layout_height="200dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+
+            <Button
+                android:id="@+id/bt_debt4_updata3_complete"
+                style="@style/button_drawble_style_biankuan"
+                android:text="完成" />
+
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>

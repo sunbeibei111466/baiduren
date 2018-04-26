@@ -1,0 +1,343 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.fragment.OneFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="3"
+        android:background="@mipmap/my_backgroup"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <!--登陆时 界面-->
+        <LinearLayout
+            android:id="@+id/ll_yer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/iv_userImage"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:background="@mipmap/my_image_b"
+                android:src="@mipmap/login_head" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_marginStart="20dp"
+                android:gravity="center_vertical"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tv_userName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:text=""
+                    android:textColor="@color/white"
+                    android:textSize="15sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <ImageView
+                        android:id="@+id/mypager_vip"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp" />
+
+                    <ImageView
+                        android:id="@+id/mypager_break_debt"
+                        android:layout_width="50dp"
+                        android:layout_height="20dp"
+                        android:layout_marginStart="20dp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:gravity="center_vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="您的备案次数:"
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/mypager_record_num"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="5dp"
+                        android:text=""
+                        android:textColor="@color/white"
+                        android:textSize="14sp" />
+
+                    <Button
+                        android:id="@+id/mypager_recharge"
+                        style="@style/pay_btn2"
+                        android:layout_marginStart="10dp"
+                        android:text="充值" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!--未登录 时界面-->
+        <LinearLayout
+            android:id="@+id/ll_no_login"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tv_login_zhuc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:src="@mipmap/my_header"
+
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:text="登陆/注册"
+                    android:textColor="@color/white"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="@color/f5f5f5"
+        android:scrollbars="none">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/tv_xiaoxi"
+                style="@style/my_ll_style">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_xiaoxi" />
+
+                <TextView
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="3"
+                    android:gravity="center_vertical"
+                    android:paddingStart="20dp"
+                    android:text="我的消息"
+                    android:textColor="@color/light_hei"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    >
+
+                    <ImageView
+                        android:id="@+id/iv_info"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:background="@drawable/round"
+                        android:visibility="gone"
+                        />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_information" />
+
+                <TextView
+                    android:id="@+id/information"
+                    style="@style/my_ll_textView_style"
+                    android:text="个人资料" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_vip" />
+
+                <TextView
+                    android:id="@+id/tv_vip"
+                    style="@style/my_ll_textView_style"
+                    android:text="开通会员" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_my_chile"
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp"
+                android:visibility="gone">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_account_number" />
+
+                <TextView
+                    android:id="@+id/tv_account_number"
+                    style="@style/my_ll_textView_style"
+                    android:text="我的子账号" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/apply_debt_person"
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp"
+
+                >
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/apply_debt" />
+
+                <TextView
+                    android:id="@+id/tv_apply_debt"
+                    style="@style/my_ll_textView_style"
+                    android:text="申请解债人" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_my_report"
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp"
+
+                >
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/apply_debt" />
+
+                <TextView
+                    android:id="@+id/tv_my_report"
+                    style="@style/my_ll_textView_style"
+                    android:text="我的报告" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_order" />
+
+                <TextView
+                    android:id="@+id/tv_bill"
+                    style="@style/my_ll_textView_style"
+                    android:text="我的账单" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/zhaipai" />
+
+                <TextView
+                    android:id="@+id/tv_order"
+                    style="@style/my_ll_textView_style"
+                    android:text="我的摘牌" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_about" />
+
+                <TextView
+                    android:id="@+id/tv_about"
+                    style="@style/my_ll_textView_style"
+                    android:text="关于我们" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_opinion" />
+
+                <TextView
+                    android:id="@+id/tv_opinion"
+                    style="@style/my_ll_textView_style"
+                    android:text="意见反馈" />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/my_ll_style"
+                android:layout_marginTop="4dp">
+
+                <ImageView
+                    style="@style/my_ll_image_style"
+                    android:src="@mipmap/my_telephone" />
+
+                <TextView
+                    android:id="@+id/tv_telephone"
+                    style="@style/my_ll_textView_style"
+                    android:text="客服热线" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </ScrollView>
+
+
+</LinearLayout>

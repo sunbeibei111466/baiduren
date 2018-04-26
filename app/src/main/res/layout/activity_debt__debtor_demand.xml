@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.activity.debtrecord.Debt_CreditorsDemand">
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_debt2_demand_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            android:text="债权人需求"
+            android:textColor="@color/light_hei"
+            style="@style/toolbar_textview_style"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+
+    <View
+        android:id="@+id/view_debt2_demand_line1"
+        style="@style/line_5dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_debt2_demand_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_2"
+        style="@style/ll_style_magin_edite"
+        app:layout_constraintTop_toBottomOf="@id/view_debt2_demand_line1">
+
+        <TextView
+            style="@style/textView_style3"
+            android:text="类型"
+
+            />
+
+        <TextView
+            android:id="@+id/et_debt2_demand_type_too"
+            style="@style/editeText_style_2"
+            android:enabled="false"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_debt2_demand_line2"
+        style="@style/line_5dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_debt2_demand_2" />
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_6"
+        style="@style/ll_style_magin_edite"
+        app:layout_constraintTop_toBottomOf="@id/view_debt2_demand_line2">
+
+        <TextView
+            style="@style/textView_style3"
+            android:text="名称"
+            />
+
+        <EditText
+            android:id="@+id/et_debt2_demand_name_too"
+            style="@style/editeText_style_2"
+            android:hint="请输入需求名称"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_debt2_demand_line6"
+        style="@style/line_5dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_debt2_demand_6" />
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_3"
+        style="@style/ll_style_magin_edite"
+        app:layout_constraintTop_toBottomOf="@id/view_debt2_demand_line6">
+
+        <TextView
+            style="@style/textView_style3"
+            android:text="估值(元)"
+
+            />
+
+        <EditText
+            android:id="@+id/et_debt2_demand_jine_too"
+            style="@style/editeText_style_2"
+            android:hint="元"
+            android:inputType="number"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_debt2_demand_line3"
+        style="@style/line_5dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_debt2_demand_3" />
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_4"
+        style="@style/ll_style_magin_edite"
+        app:layout_constraintTop_toBottomOf="@id/view_debt2_demand_line3">
+
+        <TextView
+            style="@style/textView_style3"
+            android:text="地区"
+
+            />
+
+        <TextView
+            android:id="@+id/et_debt2_demand_diqu_too"
+            style="@style/editeText_style_2"
+            android:hint="选择需求所在地区"
+            />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_debt2_demand_line4"
+        style="@style/line_5dp"
+        app:layout_constraintTop_toBottomOf="@id/ll_debt2_demand_4" />
+
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_5"
+        style="@style/ll_style_magin_edite"
+        app:layout_constraintTop_toBottomOf="@id/view_debt2_demand_line4">
+
+        <TextView
+            style="@style/textView_style3"
+            android:text="需求描述"
+
+            />
+
+        <EditText
+            android:id="@+id/et_debt2_demand_beizhu_too"
+            style="@style/editeText_style_2"
+            android:hint="可填写所有需求"
+            />
+
+    </LinearLayout>
+
+
+    <Button
+        android:text="提交"
+        android:id="@+id/bt_debt2_demand"
+        style="@style/page_bottom_button_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+
+</android.support.constraint.ConstraintLayout>

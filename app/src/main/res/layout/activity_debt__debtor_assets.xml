@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtrecord.Debt_CreditorsDemand">
+
+    <LinearLayout
+        android:id="@+id/ll_debt2_demand_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_debt2_demand_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="债务人资产"
+            android:textColor="@color/light_hei" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_debt2_demand_line1"
+        style="@style/line_5dp"
+        android:layout_below="@id/ll_debt2_demand_toolbar" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_below="@id/view_debt2_demand_line1"
+        android:layout_weight="7"
+        android:paddingBottom="10dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_2"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="类型"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_debt3_demand_type_three"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line2"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_6"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="名称" />
+
+                <EditText
+                    android:id="@+id/et_debt3_demand_name_three"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line6"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_3"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="估值(元)"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt3_demand_jine_three"
+                    style="@style/editeText_style_2"
+                    android:hint="元"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <View
+
+                style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="数量"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt3_assets_shulian_three"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入此资产数量"
+                    android:inputType="number"/>
+
+            </LinearLayout>
+
+            <View
+
+                style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="估值总额"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_debt3_assets_zonge_three"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估机构"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt3_assets_jigou_three"
+                    style="@style/editeText_style_2"
+                    android:hint="个人/机构" />
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_4"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="地区"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_debt3_demand_diqu_three"
+                    style="@style/editeText_style_2"
+                    android:hint="选择需求所在地区" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line4"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_5"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="资产描述"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt3_asstes_pmiaoshu_three"
+                    style="@style/editeText_style_2"
+                    android:hint="可填写详细描述" />
+
+            </LinearLayout>
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_assic_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_assets_tijiao"
+        style="@style/page_bottom_button_style"
+        android:text="提交" />
+
+</LinearLayout>

@@ -1,0 +1,293 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtrecord.PropertyRightsProof">
+
+    <LinearLayout
+        android:id="@+id/ll_debt4_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_debt4_currency_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="产权借贷"
+            android:textColor="@color/light_hei" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
+        android:background="@color/f5f5f5"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:gravity="center"
+                android:text="提示:同颜色*为一组问题，至少填写完一组问题"
+                android:textSize="12sp" />
+
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="标的名称"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入标的名称"
+                    android:drawableLeft="@mipmap/xing_b"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="计量单位"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_danwei"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入计量单位"
+                    android:drawableLeft="@mipmap/xing_b"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="产权归属"
+                    />
+
+                <EditText
+                    android:id="@+id/tv_property_cq_ssd"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入产权归属"
+                    android:drawableLeft="@mipmap/xing_b"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="产权年限"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_cq_nx"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入产权年限"
+                    android:drawableLeft="@mipmap/xing_b"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估值"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_pgz"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入评估值"
+                    android:drawableLeft="@mipmap/xing_b"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估机构"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_cq_jigou"
+                    style="@style/editeText_style_2"
+                    android:hint="个人/机构"
+                    android:drawableLeft="@mipmap/xing_b"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="专利号"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_zlh"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入专利号"
+                    android:drawableLeft="@mipmap/xing_o"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="专利年限"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_zl_nx"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入使用年限"
+                    android:drawableLeft="@mipmap/xing_o"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估值"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_zl_pgz"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入评估值"
+                    android:drawableLeft="@mipmap/xing_o"
+                   android:inputType="number" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="评估机构"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_zl_jigou"
+                    style="@style/editeText_style_2"
+                    android:hint="个人/机构"
+                    android:drawableLeft="@mipmap/xing_o"
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+            android:layout_marginTop="4dp"
+            style="@style/ll_style_magin_edite"
+            >
+            <TextView
+                style="@style/textView_style"
+                android:text="已还合计"
+                />
+
+            <EditText
+                android:id="@+id/et_property_yihuan"
+                style="@style/editeText_style_2"
+                android:hint="请输入已还数量"
+               android:inputType="number"/>
+        </LinearLayout>
+
+            <LinearLayout
+                android:layout_marginTop="4dp"
+                style="@style/ll_style_magin_edite"
+                >
+                <TextView
+                    style="@style/textView_style"
+                    android:text="未还余额"
+                    />
+
+                <EditText
+                    android:id="@+id/et_property_weihuan"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入未还余额数(元)"
+                   android:inputType="number" />
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyGridView
+                android:id="@+id/gv_property_photo"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="6dp"
+                android:layout_marginRight="6dp"
+                android:layout_marginTop="10dp"
+                android:horizontalSpacing="10dp"
+                android:numColumns="4"
+                android:scrollbars="none"
+                android:verticalSpacing="10dp" />
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_prooperty_baocun"
+        style="@style/page_bottom_button_style"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:text="保存"
+        />
+
+</LinearLayout>

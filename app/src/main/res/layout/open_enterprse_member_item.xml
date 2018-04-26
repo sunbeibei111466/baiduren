@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="vertical">
+
+
+    <RelativeLayout
+        android:id="@+id/rl_open_vip_parent"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@drawable/line_select2"
+        android:layout_marginTop="4dp"
+        >
+
+        <TextView
+            android:id="@+id/tv_deta"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="20dp"
+            android:gravity="center_vertical"
+            android:textColor="@color/light_hei"
+            />
+
+        <TextView
+            android:id="@+id/tv_xianjia"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_marginEnd="20dp"
+            android:gravity="center"
+            android:textColor="@color/orgin"
+            />
+
+        <TextView
+            android:id="@+id/tv_yuanjia"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginEnd="20dp"
+            android:layout_marginStart="10dp"
+            android:layout_toLeftOf="@id/tv_xianjia"
+            android:gravity="center"
+            android:visibility="gone"
+            />
+
+    </RelativeLayout>
+
+
+</LinearLayout>

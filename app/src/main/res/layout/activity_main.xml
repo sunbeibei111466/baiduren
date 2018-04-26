@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.yl.baiduren.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#ffffff"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/fl_contentLayout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="11">
+
+        </FrameLayout>
+
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_alignTop="@+id/ll_linear"
+            android:background="#ddd" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:id="@+id/ll_one"
+                style="@style/ll_bottom_style"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_home"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/bdr_button_one" />
+
+                <TextView
+                    android:id="@+id/tv_home"
+                    style="@style/bttonm_style"
+                    android:text="首页"
+                    android:textColor="@color/blue" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_too"
+                style="@style/ll_bottom_style"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_too"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/bdr_button_too" />
+
+                <TextView
+                    android:id="@+id/tv_jzlc"
+                    style="@style/bttonm_style"
+                    android:text="新手上路"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                style="@style/ll_bottom_style"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_three"
+                style="@style/ll_bottom_style"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_three"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/bdr_button_three" />
+
+                <TextView
+                    android:id="@+id/tv_zsr"
+                    style="@style/bttonm_style"
+                    android:text="解债天使"
+
+                    />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/ll_fore"
+                style="@style/ll_bottom_style"
+                android:orientation="vertical">
+
+                <ImageView
+                    android:id="@+id/iv_fore"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:background="@drawable/bdr_button_fore" />
+
+                <TextView
+                    android:id="@+id/tv_wo"
+                    style="@style/bttonm_style"
+                    android:text="我的"
+
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+<LinearLayout
+    android:id="@+id/ll_parent_gx"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_alignParentBottom="true"
+    android:layout_centerHorizontal="true"
+    android:layout_marginBottom="6dp"
+    android:gravity="center">
+    <ImageView
+        android:id="@+id/id_btn_home_oneyuan"
+        android:layout_width="47dp"
+        android:layout_height="45dp"
+        android:background="@mipmap/gongxu" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="供需对碰"
+        android:layout_marginTop="2dp"
+        android:textSize="14sp"
+        android:textColor="@color/orgin"/>
+
+
+</LinearLayout>
+
+
+</RelativeLayout>

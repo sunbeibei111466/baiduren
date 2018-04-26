@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    >
+
+
+    <RelativeLayout
+        android:id="@+id/rl_in"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+
+        <LinearLayout
+            android:id="@+id/ll_share_adapter_item_1"
+            style="@style/adapter_item_layout_ll">
+
+            <TextView
+                style="@style/creditor_rights_information"
+                android:text="投资项目" />
+
+            <TextView
+                android:id="@+id/et_investment_adapter_name"
+                style="@style/creditor_rights_information_editView"
+                android:layout_marginStart="10dp" />
+        </LinearLayout>
+
+
+
+        <ImageView
+            android:id="@+id/iv_investment_delete"
+            android:layout_width="24dp"
+            android:layout_height="24dp"
+            android:layout_alignParentRight="true"
+            android:layout_marginEnd="20dp"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/delete2"
+            />
+    </RelativeLayout>
+
+    <com.yl.baiduren.view.MyRecyclerView
+        android:layout_below="@+id/rl_in"
+        android:id="@+id/item_my_rv"
+        android:layout_width="match_parent"
+        android:layout_height="300dp">
+    </com.yl.baiduren.view.MyRecyclerView>
+</RelativeLayout>

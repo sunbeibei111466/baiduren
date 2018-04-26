@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/add_child_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="新增子账号"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+
+            />
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+                android:id="@+id/view_debt2_demand_line1"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_2"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="用户名"
+
+                    />
+
+                <EditText
+                    android:id="@+id/child_natural_name"
+                    style="@style/editeText_style_2"
+                    android:hint="用于登录" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line2"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_3"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="手机号"
+                    />
+
+                <EditText
+                    android:id="@+id/add_child_phone"
+                    style="@style/editeText_style_2"
+                    android:hint="可用于登录和找回密码"
+                    android:inputType="phone"/>
+
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/view_debt2_demand_line3"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/user_name_line3"
+                style="@style/ll_style_magin_edite"
+                >
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="@string/yan_zheng_code" />
+
+                <EditText
+                    android:id="@+id/et_child_text"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="5"
+                    android:gravity="center_vertical"
+                    android:textColor="@color/light_hei"
+                    android:textSize="14sp"
+                    android:paddingStart="10dp"
+                    android:background="@null"
+                    android:textColorHighlight="@color/light_black"
+                    android:hint="@string/et_password"
+                    android:inputType="number"
+                    />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/child_send_yzm"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/send_ma"
+                        android:gravity="center"
+                        android:text="@string/send"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line6"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_4"
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="密码"
+
+                    />
+
+                <EditText
+                    android:id="@+id/add_child_password"
+                    style="@style/editeText_style_2"
+                    android:hint="请设置密码"
+                    android:inputType="textPassword"
+                    />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line4"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_5"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="确认密码"
+
+                    />
+
+                <EditText
+                    android:id="@+id/child_conmit_password"
+                    style="@style/editeText_style_2"
+                    android:hint="请确认密码"
+                    android:inputType="textPassword"
+                    />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout  style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="真实姓名"
+
+                    />
+
+                <EditText
+                    android:id="@+id/add_child_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请填写真实姓名" />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="身份证号"
+
+                    />
+
+                <EditText
+                    android:id="@+id/add_child_code"
+                    style="@style/editeText_style_2"
+                    android:hint="请填写合法证号" />
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+
+            <LinearLayout  style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="所属地"
+
+                    />
+
+                <TextView
+                    android:id="@+id/add_child_area"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择说属地" />
+            </LinearLayout>
+
+
+            <View
+                android:id="@+id/view_debt2_demand_line5"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_6"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="详细地址"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_child_adress"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入详细地址" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/child_regiver"
+                android:layout_width="match_parent"
+                android:layout_height="45dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginEnd="20dp"
+                android:background="@drawable/login_button_shape"
+                android:gravity="center"
+                android:layout_marginTop="20dp"
+                android:text="注册"
+                android:textStyle="bold"
+                android:textColor="#fff"/>
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center"
+                android:textColor="@color/blue"
+                android:textSize="15sp"
+                android:text="协议" />
+
+        </LinearLayout>
+    </ScrollView>
+
+
+
+
+</LinearLayout>

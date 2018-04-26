@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+            <TextView
+                android:id="@+id/shareholder_name"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:textColor="@color/light_hei"
+                android:text="股东姓名"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/shareholder_name_str"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/light_hei"
+                android:layout_toRightOf="@id/shareholder_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+            <ImageView
+                android:id="@+id/iv_delete_shareholder"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="20dp"
+                android:src="@drawable/delete"
+                android:layout_width="20dp"
+                android:layout_height="20dp" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            >
+
+            <TextView
+                android:id="@+id/investment_number"
+                android:layout_centerVertical="true"
+                android:textColor="@color/light_hei"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:text="投资金额"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/investment_number_str"
+                android:layout_centerVertical="true"
+                android:textColor="@color/light_hei"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/investment_number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            >
+
+            <TextView
+                android:id="@+id/share_ratio"
+                android:layout_centerVertical="true"
+                android:textColor="@color/light_hei"
+                android:layout_marginLeft="30dp"
+                android:layout_width="wrap_content"
+                android:text="股份占比"
+                android:layout_height="wrap_content" />
+
+            <TextView
+                android:id="@+id/share_ratio_str"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="10dp"
+                android:textColor="@color/light_hei"
+                android:layout_toRightOf="@id/share_ratio"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>

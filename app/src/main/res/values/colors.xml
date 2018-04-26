@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#3F51B5</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+    <color name="blue">#2595ff</color>
+    <color name="light_bai">#ddd</color>
+    <color name="white">#fff</color>
+    <color name="light_gray">#efefef</color>
+    <color name="light_black">#999</color>
+    <color name="light_hei">#333</color>
+    <color name="f5f5f5">#f5f5f5</color>
+    <color name="creditor_rights">#666</color>
+    <color name="orgin">#ff8460</color>
+    <color name="red">#ff030f</color>
+    <color name="number">#ff6a6b</color>
+
+
+    <!--H5 所用色号-->
+    <color name="mainColor">#573567</color>
+    <color name="black">#000000</color>
+    <color name="font_gray_b">#d4d4d3</color>
+    <color name="font_tab_1">#42369a</color>
+    <color name="font_tab_0">#b1b1b1</color>
+    <color name="font_common_1">#424242</color>
+    <color name="font_common_2">#a1a1a1</color>
+    <color name="font_blue">#42369a</color>
+    <color name="font_green">#00cccc</color>
+    <color name="commom_background">#f3f3f3</color>
+    <color name="pdf_red">#ff4341</color>
+</resources>

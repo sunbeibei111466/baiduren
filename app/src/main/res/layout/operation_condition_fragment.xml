@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_operation_parent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <TextView
+                    style="@style/creditor_rights_information"
+                    android:text="产业名称" />
+
+                <EditText
+                    android:id="@+id/et_operation_name"
+                    style="@style/creditor_rights_information_editView"
+                    android:hint="请输入产业下产品名称" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_bai" />
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <TextView
+                    style="@style/creditor_rights_information"
+                    android:text="盈亏状况" />
+
+                <RadioGroup
+                    android:id="@+id/et_share_scale"
+                    style="@style/creditor_rights_information_editView"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_operation_shi"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center"
+                        android:text="是"
+                        android:checked="true"
+
+                        />
+
+                    <RadioButton
+                        android:id="@+id/rb_operation_fou"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="40dp"
+                        android:gravity="center"
+                        android:text="否" />
+                </RadioGroup>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_bai" />
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <TextView
+                    style="@style/creditor_rights_information"
+                    android:text="具体价值" />
+
+                <EditText
+                    android:id="@+id/et_operation_jiazhi"
+                    style="@style/creditor_rights_information_editView"
+                    android:hint="元"
+                    android:inputType="number"/>
+            </LinearLayout>
+
+            <View style="@style/line_height_0_5dp_style" />
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <Button
+                    android:id="@+id/bt_operation_complete"
+                    style="@style/button_drawble_style_biankuan"
+                    android:text="保存" />
+            </LinearLayout>
+
+            <View style="@style/line_height_6dp_style" />
+
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="4">
+
+        <com.yl.baiduren.view.MyRecyclerView
+            android:id="@+id/operaton_dataList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/bt_operation"
+        style="@style/page_bottom_button_style"
+        android:text="提交" />
+
+</LinearLayout>

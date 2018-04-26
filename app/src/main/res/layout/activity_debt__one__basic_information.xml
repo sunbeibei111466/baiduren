@@ -1,0 +1,376 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/ll_debt1_parent"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.debtrecord.Debt_One_BasicInformation">
+
+
+    <LinearLayout
+        android:id="@+id/ll_debt1_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_debt1_back_finsh"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="债事备案"
+            android:textColor="@color/light_hei" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <View style="@style/line_height_0_5dp_style" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_3"
+                style="@style/ll_style_magin_edite">
+
+                <LinearLayout
+                    android:id="@+id/ll_debt1_one"
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight="9.5"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        style="@style/textView_style2"
+                        android:text="债权人证号" />
+
+                    <EditText
+                        android:id="@+id/et_zqr_code"
+                        style="@style/editeText_style"
+                        android:hint="@string/debt_name" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/ll_cx"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/bt_debt1_query2"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/debt_button_back"
+                        android:gravity="center"
+                        android:text="@string/query"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line3"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_4"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="债权人姓名" />
+
+                <EditText
+                    android:id="@+id/et_debt1_zqr_name"
+                    style="@style/editeText_style" />
+
+                <android.support.v4.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line4"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_1"
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="债务人证号" />
+
+                <EditText
+                    android:id="@+id/et_debt1_zw_name"
+                    style="@style/editeText_style"
+                    android:hint="@string/debt_name" />
+
+
+                <LinearLayout
+
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5"
+                    android:gravity="center">
+
+                    <Button
+                        android:id="@+id/bt_debt1_query1"
+                        android:layout_width="60dp"
+                        android:layout_height="25dp"
+                        android:background="@drawable/debt_button_back"
+                        android:gravity="center"
+                        android:text="@string/query"
+                        android:textColor="@color/blue"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line1"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_2"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="@string/debt_zw_name"
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt1_zwr_name"
+                    style="@style/editeText_style" />
+
+                <android.support.v4.widget.Space
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="2.5" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line2"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_10"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="债事类型"
+
+                    />
+
+                <RadioGroup
+                    android:id="@+id/rg_debt1"
+                    style="@style/editeText_style_2"
+                    android:orientation="horizontal">
+
+                    <RadioButton
+                        android:id="@+id/rb_debt1_hb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:text="货币" />
+
+                    <RadioButton
+                        android:id="@+id/rb_debt1_fhb"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="10dp"
+                        android:text="非货币" />
+                </RadioGroup>
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line9"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_6"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="债事金额(元) "
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt1_amout"
+                    style="@style/editeText_style"
+                    android:hint="元"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <View style="@style/line_5dp" />
+
+            <LinearLayout style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="解债佣金(%)   "
+
+                    />
+
+                <EditText
+                    android:id="@+id/et_debt1_jiezhai"
+                    style="@style/editeText_style"
+                    android:hint="%"
+                    android:inputType="numberDecimal" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line6"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_7"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="债事开始时间"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_debt1_fs_time"
+                    style="@style/editeText_style"
+                    android:hint="请选择债事开始时间" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line7"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_8"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style2"
+                    android:text="债事结束时间"
+
+                    />
+
+                <TextView
+                    android:id="@+id/et_debt1_end_time"
+                    style="@style/editeText_style"
+                    android:hint="不选择默认为无期限" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line8"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_9"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style4"
+                    android:text="债事发生地" />
+
+                <TextView
+                    android:id="@+id/et_debt1_fs_area"
+                    style="@style/editeText_style"
+                    android:hint="请选择债事发生地" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line10"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+
+                style="@style/ll_style_magin_edite"
+                android:gravity="center">
+
+                <LinearLayout
+                    android:id="@+id/ll_debt1_11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+
+                    <CheckBox
+                        android:id="@+id/checkbox"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="阅读并同意" />
+
+                    <TextView
+                        android:id="@+id/user_instructions"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="备案用户需知协议"
+                        android:textColor="@color/blue" />
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+
+    <Button
+        android:id="@+id/bt_debt1"
+        style="@style/page_bottom_button_style"
+        android:text="保存" />
+
+
+    <View
+        android:id="@+id/view_line"
+        style="@style/line_height_0_5dp_style" />
+</LinearLayout>

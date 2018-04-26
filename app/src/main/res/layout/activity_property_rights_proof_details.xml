@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white"
+    tools:context="com.yl.baiduren.activity.debtrecord.PropertyRightsProofDetails">
+
+    <LinearLayout
+        android:id="@+id/ll_currency_details_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:orientation="horizontal"
+
+        >
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_property_details_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="产权借贷详情"
+            android:textColor="@color/light_hei" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_property_details_updata"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_details_1"
+        style="@style/line_height_0_5dp_style"
+        app:layout_constraintTop_toBottomOf="@id/ll_currency_details_toolbar">
+
+    </View>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+        app:layout_constraintTop_toBottomOf="@id/view_details_1"
+        >
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+
+            >
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="标的名称" />
+
+                <TextView
+                    android:id="@+id/proper_name"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="计量单位" />
+
+                <TextView
+                    android:id="@+id/proper_unit"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="产权归属" />
+
+                <TextView
+                    android:id="@+id/proper_belong"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="产权年限" />
+
+                <TextView
+                    android:id="@+id/proper_year"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估值" />
+
+                <TextView
+                    android:id="@+id/proper_pinggu"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估机构" />
+
+                <TextView
+                    android:id="@+id/proper_jigou"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="专利号" />
+
+                <TextView
+                    android:id="@+id/proper_zhuli"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="专利年限" />
+
+                <TextView
+                    android:id="@+id/proper_zh_year"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估值" />
+
+                <TextView
+                    android:id="@+id/proper_value"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="评估机构" />
+
+                <TextView
+                    android:id="@+id/zhuanli_pinggu"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="已还合计" />
+
+                <TextView
+                    android:id="@+id/zhuanli_return"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="未还余额" />
+
+                <TextView
+                    android:id="@+id/yet_retun_amout"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/rv_property_details_imagelist"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingEnd="20dp"
+                android:paddingStart="20dp"
+                android:layout_marginBottom="20dp"
+                >
+            </com.yl.baiduren.view.MyRecyclerView>
+
+        </LinearLayout>
+    </ScrollView>
+
+</LinearLayout>

@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/drawlayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/f5f5f5">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/white"
+        >
+        <LinearLayout
+            android:id="@+id/title_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/iv_buness_hall_back"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/back_finish" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/debt_details_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="债事总览"
+                android:textColor="#333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center" />
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="7"
+            android:orientation="vertical">
+
+
+
+            <View style="@style/line_height_6dp_style" />
+
+            <LinearLayout
+
+                android:id="@+id/id_ly_bottombar"
+                android:layout_width="fill_parent"
+                android:layout_height="45dp"
+                android:orientation="horizontal">
+
+                <RelativeLayout
+                    android:id="@+id/btn_Wf1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp">
+
+                    <TextView
+                        android:id="@+id/txt_Wf1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/light_black"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/line_Wf1"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignBottom="@id/txt_Wf1"
+                        android:layout_alignParentBottom="true"
+                        android:background="@color/blue" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@+id/btn_Wf2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:paddingLeft="50dp"
+                    android:paddingRight="50dp">
+
+                    <TextView
+                        android:id="@+id/txt_Wf2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:textColor="@color/light_black"
+                        android:textSize="20sp" />
+
+                    <RelativeLayout
+                        android:id="@+id/line_Wf2"
+                        android:layout_width="match_parent"
+                        android:layout_height="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_alignParentStart="true"
+                        android:background="@color/blue" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View style="@style/line_height_0_5dp_style" />
+
+            <LinearLayout
+                android:id="@+id/ll_patent_buness"
+                android:layout_width="match_parent"
+                android:layout_height="40dp">
+
+
+
+                <TextView
+                    android:id="@+id/tv_buness_vules"
+                    android:text="类型"
+                    style="@style/debt_buness_textStyle"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_buness_time"
+                    android:text="时间"
+                    style="@style/debt_buness_textStyle"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_buness_address"
+                    android:text="地区"
+                    style="@style/debt_buness_textStyle"
+                    />
+
+                <TextView
+                    android:id="@+id/tv_buness_saixuan"
+                    android:text="筛选"
+                    style="@style/debt_buness_textStyle"
+                    />
+                <TextView
+                    android:id="@+id/tv_buness_jinque"
+                    android:text="精确"
+                    style="@style/debt_buness_textStyle_seach"
+                    />
+
+            </LinearLayout>
+
+            <android.support.v4.view.ViewPager
+                android:id="@+id/debt_hall_viewpager"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </LinearLayout>
+        <Button
+            android:id="@+id/bt_new_add_hall"
+            style="@style/page_bottom_button_style"
+            android:text="新增债事"
+            />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/rl_right_layout"
+        android:layout_width="300dp"
+        android:layout_height="match_parent"
+        android:layout_gravity="end"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="8"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@color/light_gray"
+                android:gravity="center_vertical"
+                android:paddingLeft="20dp"
+                android:text="筛选"
+                android:textColor="@color/light_hei"
+                android:textSize="14sp"
+
+                />
+
+            <TextView
+                style="@style/textview_shuai_xuan2"
+                android:text="债事发布时间" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/tv_timer_start2"
+                    style="@style/textview_shuai_xuan"
+                    android:gravity="center" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:text="至"
+                    android:textSize="14sp" />
+
+                <TextView
+                    android:id="@+id/tv_timer_end2"
+                    style="@style/textview_shuai_xuan"
+                    android:gravity="center" />
+            </LinearLayout>
+
+            <TextView
+                style="@style/textview_shuai_xuan2"
+                android:text="地区" />
+
+            <TextView
+                android:id="@+id/tv_area_select_buness"
+                android:layout_width="240dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/timer_select_shape"
+                android:gravity="center"
+                android:paddingEnd="4dp"
+                android:paddingStart="4dp" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/textview_shuai_xuan2"
+                        android:text="债事金额" />
+
+                    <EditText
+                        android:id="@+id/et_jine_drawlayout"
+                        style="@style/textview_shuai_xuan"
+                        android:gravity="center"
+                        android:inputType="number"/>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/textview_shuai_xuan2"
+                        android:text="所得佣金" />
+
+                    <TextView
+                        android:id="@+id/et_yongjin"
+                        style="@style/textview_shuai_xuan"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        style="@style/textview_shuai_xuan2"
+                        android:text="债权人需求" />
+
+                    <TextView
+                        android:id="@+id/et_need"
+                        style="@style/textview_shuai_xuan"
+                        android:gravity="center" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_marginStart="30dp"
+                    android:orientation="vertical">
+
+                    <TextView
+
+                        style="@style/textview_shuai_xuan2"
+                        android:text="债务人资产" />
+
+                    <TextView
+                        android:id="@+id/et_assert"
+                        style="@style/textview_shuai_xuan"
+                        android:gravity="center" />
+                </LinearLayout>
+            </LinearLayout>
+
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_weight="3">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="3"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginStart="40dp"
+                    android:background="@drawable/debt_buness_parent_bg"
+                    >
+
+                    <com.yl.baiduren.view.MyListView
+                        android:id="@+id/lv_buness_drawlayout"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+
+                        android:scrollbars="none" />
+                </LinearLayout>
+            </ScrollView>
+
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal">
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="#FF6CA9E2"
+                android:gravity="center"
+                android:text="重置"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+            <Button
+                android:id="@+id/bt_drawlayout_wanc"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/blue"
+                android:gravity="center"
+                android:text="完成"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+</android.support.v4.widget.DrawerLayout>

@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/zhengxin_finish"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/title_name"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="企业认证"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <android.support.v4.widget.Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center" />
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view_apply_line5"
+        style="@style/line_5dp"
+        android:layout_below="@id/title_bar_layout"/>
+    <ScrollView
+        android:layout_below="@id/view_apply_line5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="60dp"
+        >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+   <TextView
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:paddingStart="16dp"
+       android:textColor="@color/light_hei"
+       android:textSize="16sp"
+       android:text="企业:"
+       android:background="@color/light_gray"/>
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_2"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="营业执照名称"
+
+                    />
+
+                <EditText
+                    android:id="@+id/re_qy_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入企业名称" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line2"
+                style="@style/line_5dp"
+                />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_3"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="营业执照住所"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_area"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入企业地址" />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line3"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt2_demand_4"
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style7"
+                    android:text="社会统一信用代码"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_code"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入企业代码"
+                     />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt2_demand_line4"
+                style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="法人代表"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_fr"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入法人姓名"
+                     />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="法人身份证"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_fr_icard"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入法人身份证"
+                    />
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:paddingStart="16dp"
+                android:textColor="@color/light_hei"
+                android:textSize="16sp"
+                android:text="个人:"
+                android:background="@color/light_gray"/>
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="经办人"
+
+                    />
+
+                <EditText
+                    android:id="@+id/qy_jbr_name"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入经办人姓名"
+                    />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="经办人身份证"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_jbr_icde"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入经办人身份证号"
+                     />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="经办人手机号"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_jbr_phone"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入经办人手机号"
+                    android:inputType="phone" />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+
+
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:background="@color/white">
+
+
+                <TextView
+                    android:id="@+id/code"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginStart="16dp"
+                    android:text="验证码"
+                    android:textColor="@color/light_hei"
+                    android:textSize="16sp"
+
+                    />
+
+                <EditText
+                    android:id="@+id/yz_qy_code"
+                    android:layout_width="150dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="30dp"
+                    android:layout_toRightOf="@id/code"
+                    android:background="@null"
+                    android:gravity="center"
+                    android:inputType="number"
+                    android:textColor="@color/light_hei"
+                    android:textSize="16sp" />
+
+                <Button
+                    android:id="@+id/rz_qy_send"
+                    android:layout_width="60dp"
+                    android:layout_height="25dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="5dp"
+                    android:background="@drawable/send_ma"
+                    android:gravity="center"
+                    android:text="@string/send"
+                    android:textColor="@color/white"
+                    android:textSize="12sp" />
+            </RelativeLayout>
+
+            <View style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="所属地"
+
+                    />
+
+                <TextView
+                    android:id="@+id/rz_qy_jbr_area"
+                    style="@style/editeText_style_2"
+                    android:hint="请选择经办人的所属地"
+                    />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+            <LinearLayout
+                style="@style/ll_style_magin_edite">
+
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="详细地址"
+
+                    />
+
+                <EditText
+                    android:id="@+id/rz_qy_jbr_adress"
+                    style="@style/editeText_style_2"
+                    android:hint="请输入经办人的详细地址"
+                    />
+
+            </LinearLayout>
+
+            <View
+                style="@style/line_5dp" />
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:paddingStart="16dp"
+                android:text="（请上传企业资料照片）"
+                android:textColor="@color/creditor_rights"
+                android:textSize="16sp" />
+
+            <LinearLayout
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="80dp"
+                android:orientation="horizontal">
+                <ImageView
+                    android:id="@+id/business_license"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@mipmap/zheng"/>
+                <ImageView
+                    android:id="@+id/zheng_jian"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@mipmap/fan"/>
+                <ImageView
+                    android:id="@+id/code_photos"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"
+                    android:layout_marginStart="16dp"
+                    android:src="@mipmap/zhizhao"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+
+        android:id="@+id/rz_qy_confirm"
+        style="@style/page_bottom_button_style"
+        android:text="提交"
+        android:layout_alignParentBottom="true"/>
+
+</RelativeLayout>

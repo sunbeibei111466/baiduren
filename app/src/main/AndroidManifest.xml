@@ -1,0 +1,562 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="com.yl.baiduren">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+
+
+    <!-- 推送 下面列出的是必选的权限，还有可选的权限没有列出，例如前台是否可以显示通知这个可选权限 -->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <!-- 在SD卡中创建与删除文件权限 -->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+
+    <application
+        android:name=".App"
+        android:allowBackup="true"
+        android:icon="@mipmap/logo"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/logo"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme"
+        tools:replace="android:icon">
+
+        <!-- 消息推送的appkey -->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="5a670802f43e4873b2000155" />
+        <meta-data
+            android:name="UMENG_MESSAGE_SECRET"
+            android:value="e812e639782db88dd16fe38ac45c76e5" />
+        <!-- 推广渠道 -->
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="Channel ID" />
+
+        <!-- 监听通知点击或者忽略处理的广播 -->
+        <receiver
+            android:name="com.umeng.message.NotificationProxyBroadcastReceiver"
+            android:exported="false" />
+
+        <!-- 监听开机运行、网络连接变化、卸载的广播 -->
+        <!-- <receiver -->
+        <!-- android:name="com.umeng.message.SystemReceiver" -->
+        <!-- android:process=":push" > -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.BOOT_COMPLETED" /> -->
+        <!-- </intent-filter> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.net.conn.CONNECTIVITY_CHANGE" /> -->
+        <!-- </intent-filter> -->
+        <!-- <intent-filter> -->
+        <!-- <action android:name="android.intent.action.PACKAGE_REMOVED" /> -->
+        <!-- <data android:scheme="package" /> -->
+        <!-- </intent-filter> -->
+        <!-- </receiver> -->
+
+
+        <!-- 支付宝 -->
+        <activity
+            android:name="com.alipay.sdk.app.H5PayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+        <activity
+            android:name="com.alipay.sdk.auth.AuthActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind" />
+
+        <!-- 微信支付 -->
+        <activity
+            android:name=".wxapi.WXPayEntryActivity"
+            android:exported="true"
+            android:launchMode="singleTop" />
+
+        <!-- 欢迎页 -->
+        <activity
+            android:name=".WelcomePage"
+            android:screenOrientation="portrait"
+            android:theme="@style/welcom" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <!-- MainActivity -->
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            >
+        </activity>
+
+
+        <!-- 验证码登录 -->
+        <activity
+            android:name=".activity.Login_Activity_Yzm"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 忘记密码 -->
+        <activity
+            android:name=".activity.Forget_Password_Activity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+
+        <!-- 手机号密码登录 -->
+        <activity
+            android:name=".activity.Login_Activity_Password"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 注册 -->
+        <activity
+            android:name=".activity.Regisier_Activity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- adjustPan -->
+        <activity
+            android:name=".activity.debtrecord.Debt_One_BasicInformation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan"
+             />
+        <!---->
+        <!-- 债权人需求 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_Too_CreditorsDemand"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 债权人需求 信息填写页 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_CreditorsDemand"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+
+        <!-- 债务人资产 信息填写页 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_CreditorsAssets"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 债务人资产 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_Three_DebtorAssets"
+            android:screenOrientation="portrait" />
+
+        <!-- 上传凭证 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_fore_Actiity2"
+            android:screenOrientation="portrait" />
+
+        <!-- 添加债市人管理类 -->
+        <activity
+            android:name=".activity.newdebt_preson.Add_DebtPerson_Activity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <!-- 债市人列表管理类 -->
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_Person_Manger"
+            android:screenOrientation="portrait" />
+        <!-- 债权转让 -->
+        <activity
+            android:name=".activity.tradinghall.AssignmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 债事人详情页面 -->
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_Preson_Details"
+            android:screenOrientation="portrait" />
+        <!-- 债市人搜索 -->
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_Search_Person"
+            android:screenOrientation="portrait" />
+        <!-- 债事大厅 -->
+        <activity
+            android:name=".activity.debtbunesshall.Debt_Buness_Hall"
+            android:screenOrientation="portrait" />
+        <!-- 债事大厅一级 -->
+        <activity
+            android:name=".activity.debtbunesshall.Debt_Buness_Hall1"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.mypager.PersonalInformation"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.mypager.ChangePhone"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 债事详情 -->
+        <activity
+            android:name=".activity.debtbunesshall.Debt_Details"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 设置二维码扫描竖屏 -->
+        <activity
+            android:name=".activity.ScanCapuActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtrecord.CurrencyLending"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.PhysicalBorrowing"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.PropertyRightsProof"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.Sponsor"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.AssetrMortgage"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.CurrencyLendingDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.PhysicalBorrowingDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.PropertyRightsProofDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.SponsorDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtrecord.AssetrMortgageDetails"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 交易广场 -->
+        <activity
+            android:name=".activity.debtrecord.Exchange_Square_Activiyt"
+            android:screenOrientation="portrait" />
+        <!-- 债事查询 -->
+        <activity
+            android:name=".activity.debtbunesshall.Debt_Querry"
+            android:screenOrientation="portrait" />
+        <!-- 我的备案 -->
+        <activity
+            android:name=".activity.debtbunesshall.My_Record_Activity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait" />
+        <!-- 我的消息 -->
+        <activity
+            android:name=".activity.mypager.My_Message"
+            android:screenOrientation="portrait" />
+        <!-- 意见反馈 -->
+        <activity
+            android:name=".activity.mypager.FeedBack"
+            android:screenOrientation="portrait" />
+        <!-- 成功案例 -->
+        <activity
+            android:name=".activity.debtbunesshall.Sussful_Exmple"
+            android:screenOrientation="portrait" />
+        <!-- 备案支付 -->
+        <activity
+            android:name=".activity.pay_for.Recharge"
+            android:screenOrientation="portrait" />
+        <!-- 确认摘牌 -->
+        <activity
+            android:name=".activity.pay_for.Confirm_Delisting"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 支付页 -->
+        <activity
+            android:name=".activity.pay_for.Pay"
+            android:screenOrientation="portrait" />
+        <!-- 支付完成 -->
+        <activity
+            android:name=".activity.pay_for.Pay_Complate"
+            android:screenOrientation="portrait" />
+        <!-- 开通会员 -->
+        <activity
+            android:name=".activity.pay_for.Open_Member"
+            android:screenOrientation="portrait" />
+        <!-- 我的子账号 -->
+        <activity
+            android:name=".activity.mypager.My_Child_Account"
+            android:screenOrientation="portrait" />
+        <!-- 添加子账号 -->
+        <activity
+            android:name=".activity.mypager.Add_Child_Account"
+            android:screenOrientation="portrait" />
+        <!-- 子账号详情 -->
+        <activity
+            android:name=".activity.mypager.My_Child_Accouont_Details"
+            android:screenOrientation="portrait" />
+        <!-- 转让平台 -->
+        <activity
+            android:name=".activity.tradinghall.Debt_Transfer_Platform_Activity"
+            android:screenOrientation="portrait" />
+        <!-- 转让平台 二级平台 -->
+        <activity
+            android:name=".activity.tradinghall.Debt_Transfer_Platform_Hall_Activity"
+            android:screenOrientation="portrait" />
+        <!-- 我的摘牌 -->
+        <activity
+            android:name=".activity.mypager.My_Delisting"
+            android:screenOrientation="portrait" />
+        <!-- 我的账单 -->
+        <activity
+            android:name=".activity.mypager.My_Bill"
+            android:screenOrientation="portrait" />
+        <!-- 债权转让详情 -->
+        <activity
+            android:name=".activity.tradinghall.Debt_Transfer_Details"
+            android:screenOrientation="portrait" />
+        <!-- 更改密码 -->
+        <activity
+            android:name=".activity.mypager.Change_Password"
+            android:screenOrientation="portrait" />
+        <!-- 需求详情 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_Demend_Details"
+            android:screenOrientation="portrait" />
+        <!-- 资产详情 -->
+        <activity
+            android:name=".activity.debtrecord.Debt_Assaic_Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.Break_Debt_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_EnterPrise_Details"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_Person_Updata"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtmanagpreson.Debt_EnterPrise_Updata"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.debtbunesshall.DebtQuerry_BunessHall"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.CooperationWin"
+            android:screenOrientation="portrait" />
+        <!-- 我的成功案例查询 -->
+        <activity
+            android:name=".activity.debtbunesshall.Sussful_Exple_Query_Serch"
+            android:screenOrientation="portrait" />
+        <!-- 我的摘牌查询 -->
+        <activity
+            android:name=".activity.mypager.My_Delisting_Query_Serch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.tradinghall.AssignmentHall"
+            android:screenOrientation="portrait" />
+        <!-- 摘牌说明 -->
+        <activity
+            android:name=".activity.debtbunesshall.Web_Greate_Debt_Preson"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.NewsDetails"
+            android:screenOrientation="portrait" />
+        <!-- 申请解债人 -->
+        <activity
+            android:name=".activity.mypager.Apply_Claimant_People"
+            android:screenOrientation="portrait" />
+        <!-- 债事商城 -->
+        <activity
+            android:name=".activity.debtbunesshall.Debt_Shop_Mall"
+            android:screenOrientation="portrait" />
+        <!-- 我的子账号备案 -->
+        <activity
+            android:name=".activity.debtbunesshall.MyChildRecord_Activity"
+            android:screenOrientation="portrait" />
+        <!-- 我的子账号摘牌 -->
+        <activity
+            android:name=".activity.mypager.MyChild_Delisting"
+            android:screenOrientation="portrait" />
+        <!-- 供需管理大厅 -->
+        <activity
+            android:name=".activity.supply_demand.Supply_Demend_Hall"
+            android:screenOrientation="portrait" />
+        <!-- 我的共赢需求 -->
+        <activity
+            android:name=".activity.supply_demand.My_Supply_Demend_Manger"
+            android:screenOrientation="portrait" />
+        <!-- 我的关系速配 -->
+        <activity
+            android:name=".activity.supply_demand.Supply_Demend_Speed_Dating"
+            android:screenOrientation="portrait" />
+        <!-- 我的收藏 -->
+        <activity
+            android:name=".activity.supply_demand.My_Collection_Activity"
+            android:screenOrientation="portrait" />
+        <!-- 上传供应 -->
+        <activity
+            android:name=".activity.supply_demand.UploadSupply"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 上传需求 -->
+        <activity
+            android:name=".activity.supply_demand.Upload_Demend"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 供给详情 -->
+        <activity
+            android:name=".activity.supply_demand.Supply_Demend_Details"
+            android:screenOrientation="portrait" />
+        <!-- 匹配结果 -->
+        <activity
+            android:name=".activity.supply_demand.Speed_Demd_Dating_Result"
+            android:screenOrientation="portrait" />
+        <!-- 资产处置 -->
+        <activity
+            android:name=".activity.asster_dispose.Assets_Dispose"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.asster_dispose.AddAssetsDispose"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+
+        <!-- 供应搜索 -->
+        <activity
+            android:name=".activity.supply_demand.Hall_Supply_Resch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.asster_dispose.MyAssetsDispose"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.asster_dispose.Asstes_DisposeHall_Detials"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.asster_dispose.MyAsstesDisposeDetials"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.asster_dispose.AddImageText"
+            android:screenOrientation="portrait" />
+
+        <!-- 购买报告 -->
+        <activity android:name=".activity.asster_dispose.Purchase_Report" />
+        <activity
+            android:name=".activity.asster_dispose.AddInfo"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+
+        <!-- 我的共需管理 供应端 -->
+        <activity
+            android:name=".activity.supply_demand.My_Supply_Demend_Details"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 我的需求详情 -->
+        <activity android:name=".activity.supply_demand.My_Demend_Details" />
+        <!-- 供需大厅 需求详情 -->
+        <activity
+            android:name=".activity.supply_demand.Hall_Demend_Details"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity android:name=".activity.supply_demand.Speed_Supply_Dating_Result" />
+        <!-- 征信查询 -->
+        <activity
+            android:name=".activity.credit_reporting_queries.Credit_Reporting_Queries"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <!-- 征信查询结果 -->
+        <activity android:name=".activity.credit_reporting_queries.Credit_Reporting_Qurey_Result" />
+        <activity
+            android:name=".activity.debtbunesshall.DebtTransitionPager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.AssterTransitionPager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.AddAssterTransition"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.BankDockingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.AgencyDockingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.debtbunesshall.CourtDockingActivity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.pay_for.PaySuccess"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.mypager.About_Us_Activity"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.mypager.MyReport"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.mypager.MyReportSearch"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.ApplyAuthorization"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.AuthorizationManagment"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.AuthorizationConfirmPager"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.CreditReportPage"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.Authorization_Record"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.Authorizaton_Confrim_List"
+            android:screenOrientation="portrait" />
+        <activity
+            android:name=".activity.credit_reporting_queries.Preson_RenZheng"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" />
+        <activity
+            android:name=".activity.credit_reporting_queries.CreditBasicEdition"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" >
+
+
+        </activity>
+
+        <activity
+            android:name=".activity.credit_reporting_queries.Conpany_RenZheng"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan" >
+
+        </activity>
+        <activity android:name=".PdfActivity"
+            android:screenOrientation="portrait"
+            >
+
+        </activity>
+        <activity android:name=".activity.credit_reporting_queries.CreditTransition" />
+        <activity android:name=".activity.credit_reporting_queries.ZhengXing_Query"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustUnspecified|stateAlwaysHidden|adjustPan"/>
+        <activity android:name=".Downlod_Pdf_Activity" />
+    </application>
+
+</manifest>

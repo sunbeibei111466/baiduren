@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.yl.baiduren.activity.asster_dispose.Assets_Dispose">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/title_bar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/dispose_asset_back"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/back_finish" />
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/debt_details_name"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="6"
+                android:gravity="center"
+                android:text="资产展示大厅"
+                android:textColor="#333"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/dispose_asset_serch"
+                    android:layout_width="26dp"
+                    android:layout_height="26dp"
+                    android:src="@mipmap/serch" />
+            </LinearLayout>
+        </LinearLayout>
+
+        <View style="@style/line_height_0_5dp_style" />
+
+        <com.cjj.MaterialRefreshLayout
+            android:id="@+id/dispose_asset_asset_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:isLoadMore="true"
+            app:overlay="true"
+            app:progress_colors="@array/material_colors"
+            app:wave_color="#90ffffff"
+            app:wave_height_type="higher"
+            app:wave_show="true">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/dispose_asset_recycleview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@color/f5f5f5" />
+        </com.cjj.MaterialRefreshLayout>
+
+    </LinearLayout>
+
+
+    <Button
+        android:id="@+id/mine_dispose_asset"
+        style="@style/page_bottom_button_style"
+        android:text="我的资产"
+        />
+
+
+</LinearLayout>

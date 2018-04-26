@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/iv_title_left"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+
+        <TextView
+            android:id="@+id/debt_details_name_d"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="张三"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/editor_icon"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/updata_image" />
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:id="@+id/view1"
+        android:layout_width="match_parent"
+        android:layout_height="0.1dp"
+        android:background="@color/light_black"
+        app:layout_constraintTop_toBottomOf="@id/title_bar_layout" />
+
+    <LinearLayout
+        android:id="@+id/line1"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/view1">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="真实姓名" />
+
+        <TextView
+            android:id="@+id/tv_real_name"
+            style="@style/textView_style9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line2"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/line1">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="身份证号" />
+
+        <TextView
+            android:id="@+id/tv_ic_code"
+            style="@style/textView_style9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line3"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/line2">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="联系电话" />
+
+        <TextView
+            android:id="@+id/tv_cotect_phone"
+            style="@style/textView_style9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line4"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/line3">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="所属地" />
+
+        <TextView
+            android:id="@+id/tv_adress"
+            style="@style/textView_style9" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/line5"
+        style="@style/line_style"
+        app:layout_constraintTop_toBottomOf="@id/line4">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="详细地址" />
+
+        <TextView
+            android:id="@+id/tv_detail_area"
+            style="@style/textView_style9" />
+    </LinearLayout>
+
+    <android.support.v7.widget.RecyclerView
+        app:layout_constraintTop_toBottomOf="@id/line5"
+        android:id="@+id/detail_photo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginRight="6dp"
+        />
+
+
+</android.support.constraint.ConstraintLayout>

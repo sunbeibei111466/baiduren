@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:id="@+id/ll_debt3_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/upload_demend_back"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:src="@mipmap/back_finish" />
+
+        </LinearLayout>
+
+        <TextView
+            style="@style/toolbar_textview_style"
+            android:text="上传需求"
+            android:textColor="@color/light_hei" />
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <View
+
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/upload_demend_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+
+            <LinearLayout
+
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style1"
+                    android:text="类型 "
+
+                    />
+
+                <TextView
+                    android:id="@+id/upload_demend"
+                    style="@style/editeText_style"
+                    android:hint="请选择资产类别"/>
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line9"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_6"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style1"
+                    android:text="名称 "
+
+                    />
+
+                <EditText
+                    android:id="@+id/upload_demend_assict"
+                    style="@style/editeText_style"
+                    android:hint="需求资产名称"
+                     />
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/line_num"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style1"
+                    android:text="数量"
+
+                    />
+
+                <EditText
+                    android:id="@+id/upload_demend_num"
+                    style="@style/editeText_style"
+                    android:hint="请填写数量"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line6"
+                style="@style/line_5dp" />
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_7"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style1"
+                    android:text="估值"
+
+                    />
+
+                <EditText
+                    android:id="@+id/upload_demend_guzhi"
+                    style="@style/editeText_style"
+                    android:hint="请填写估值"
+                    android:inputType="number" />
+
+
+            </LinearLayout>
+
+            <View
+                android:id="@+id/view_debt1_line7"
+                style="@style/line_5dp" />
+
+
+            <LinearLayout
+                android:id="@+id/ll_debt1_9"
+                style="@style/ll_style_magin_edite">
+
+                <TextView
+                    style="@style/textView_style1"
+                    android:text="归属地" />
+
+                <TextView
+                    android:id="@+id/upload_demend_area"
+                    style="@style/editeText_style"
+                    android:hint="请选择资产归属地" />
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/bt_upload_demend"
+        style="@style/page_bottom_button_style"
+        android:text="上传"
+
+        />
+
+
+</LinearLayout>

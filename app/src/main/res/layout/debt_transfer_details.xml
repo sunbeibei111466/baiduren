@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/f5f5f5">
+    <LinearLayout
+        android:id="@+id/title_bar_layout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/toolbat_H"
+        android:background="@color/white"
+        android:gravity="center_vertical"
+        android:orientation="horizontal">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+
+            <ImageView
+                android:id="@+id/tranfer_back"
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@mipmap/back_finish" />
+        </LinearLayout>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="6"
+            android:gravity="center"
+            android:text="债权转让"
+            android:textColor="@color/light_hei"
+            android:textSize="@dimen/toolbar_textSize"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:gravity="center">
+            <ImageView
+                android:id="@+id/tranfer_editor"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
+                android:src="@mipmap/editor"/>
+        </LinearLayout>
+    </LinearLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="30dp"
+        android:background="@color/white"
+        android:gravity="center"
+        android:orientation="horizontal">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@mipmap/iv_left" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_marginStart="10dp"
+            android:gravity="center"
+            android:text="债权详情"
+            android:textColor="#333"
+            android:textSize="15sp" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:src="@mipmap/iv_right" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginTop="10dp"
+        android:background="@color/white">
+
+        <View
+            android:id="@+id/debt_details_view"
+            android:layout_width="2dp"
+            android:layout_height="20dp"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="20dp"
+            android:background="@color/colorAccent" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginStart="10dp"
+            android:layout_toRightOf="@+id/debt_details_view"
+            android:text="基本信息"
+            android:textColor="#333"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </RelativeLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="企业全称:" />
+
+        <TextView
+            android:id="@+id/tranfer_name"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="企业证号:" />
+
+        <TextView
+            android:id="@+id/tranfer_code"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="所属地:" />
+
+        <TextView
+            android:id="@+id/tranfre_tv_area"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="法人姓名:" />
+
+        <TextView
+            android:id="@+id/tranfer_tv_name"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="身份证号:" />
+
+        <TextView
+            android:id="@+id/tranfer_icode"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="联系电话:" />
+
+        <TextView
+            android:id="@+id/tranfer_phone"
+            style="@style/textView_style4" />
+    </LinearLayout>
+
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="详细地址:" />
+
+        <TextView
+            android:id="@+id/tranfer_adress"
+            style="@style/textView_style4" />
+    </LinearLayout>
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="简介:" />
+
+        <TextView
+            android:id="@+id/tranfer_profile"
+            style="@style/textView_style4" />
+    </LinearLayout>
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="所属行业类型:" />
+
+        <TextView
+            android:id="@+id/tranfer_industry_type"
+            style="@style/textView_style4" />
+    </LinearLayout>
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="上游行业类型:" />
+
+        <TextView
+            android:id="@+id/up_industry_type"
+            style="@style/textView_style4" />
+    </LinearLayout>
+    <LinearLayout style="@style/line2_style">
+
+        <TextView
+            style="@style/textView_style4"
+            android:text="下游行业类型:" />
+
+        <TextView
+            android:id="@+id/down_industry_type"
+            style="@style/textView_style4" />
+    </LinearLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/debt_details_view1"
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/debt_details_view1"
+                android:text="股份结构"
+                android:textColor="#333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+
+        <com.yl.baiduren.view.MyRecyclerView
+            android:background="@color/white"
+            android:id="@+id/share_structure_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/debt_details_view2"
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/debt_details_view2"
+                android:text="投资情况"
+                android:textColor="#333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <com.yl.baiduren.view.MyExpandListView
+            android:background="@color/white"
+            android:id="@+id/investment_situation_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/debt_details_view3"
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/debt_details_view3"
+                android:text="资产现状"
+                android:textColor="#333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <com.yl.baiduren.view.MyRecyclerView
+            android:background="@color/white"
+            android:id="@+id/assets_status_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/debt_details_view4"
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/debt_details_view4"
+                android:text="负债情况"
+                android:textColor="#333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <com.yl.baiduren.view.MyRecyclerView
+            android:background="@color/white"
+            android:id="@+id/liabilities_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="10dp"
+            android:background="@color/white">
+
+            <View
+                android:id="@+id/debt_details_view5"
+                android:layout_width="2dp"
+                android:layout_height="20dp"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="20dp"
+                android:background="@color/colorAccent" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="10dp"
+                android:layout_toRightOf="@+id/debt_details_view5"
+                android:text="经营状况"
+                android:textColor="#333"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+        </RelativeLayout>
+        <com.yl.baiduren.view.MyRecyclerView
+            android:background="@color/white"
+            android:id="@+id/operating_condition_recylcer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+
+
+    </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/btn_claim"
+        style="@style/page_bottom_button_style"
+        android:text="我要认领" />
+
+
+
+</LinearLayout>

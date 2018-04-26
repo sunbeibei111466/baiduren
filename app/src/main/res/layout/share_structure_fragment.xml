@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_share_parent"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <TextView
+                    style="@style/creditor_rights_information"
+                    android:text="股东姓名" />
+
+                <EditText
+                    android:id="@+id/et_share_name"
+                    style="@style/creditor_rights_information_editView"
+                    android:hint="请输入股东真实姓名" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_bai" />
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <TextView
+                    style="@style/creditor_rights_information"
+                    android:text="股份占比" />
+
+                <EditText
+                    android:id="@+id/et_share_scale"
+                    style="@style/creditor_rights_information_editView"
+                    android:hint="%"
+                    android:inputType="numberDecimal"/>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/light_bai" />
+
+            <LinearLayout style="@style/creditor_rights_information_ll">
+
+                <Button
+                    android:id="@+id/bt_share_complete"
+                    style="@style/button_drawble_style_biankuan"
+                    android:text="保存" />
+            </LinearLayout>
+
+            <View style="@style/line_height_6dp_style" />
+
+
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <com.yl.baiduren.view.MyRecyclerView
+                android:id="@+id/rv_share_dataList"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </ScrollView>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bt_share"
+        style="@style/page_bottom_button_style"
+        android:layout_alignParentBottom="true"
+        android:text="保存" />
+
+</RelativeLayout>

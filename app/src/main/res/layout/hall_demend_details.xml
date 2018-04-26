@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:id="@+id/ll_debt3_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/toolbat_H"
+            android:orientation="horizontal"
+
+            >
+
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:gravity="center">
+
+                <ImageView
+                    android:id="@+id/demend_detail_back"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
+                    android:src="@mipmap/back_finish" />
+
+            </LinearLayout>
+
+            <TextView
+                style="@style/toolbar_textview_style"
+                android:text="详情"
+                android:textColor="@color/light_hei" />
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2" />
+
+        </LinearLayout>
+
+        <View
+            android:id="@+id/view_details_1"
+            style="@style/line_height_0_5dp_style">
+
+        </View>
+
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="编号:" />
+
+                <TextView
+                    android:id="@+id/demend_code"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="类型:" />
+
+                <TextView
+                    android:id="@+id/demend_type"
+                    style="@style/editeText_style_2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="名称:" />
+
+                <TextView
+                    android:id="@+id/demend_name"
+                    style="@style/editeText_style_2" />
+
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="数量:" />
+
+                <TextView
+                    android:id="@+id/demend_shuliang"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="估值" />
+
+                <TextView
+                    android:id="@+id/demend_guzhi"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/ll_style_magin_edite_2">
+
+                <TextView
+                    style="@style/textView_style3"
+                    android:text="归属地:" />
+
+                <TextView
+                    android:id="@+id/demned_area"
+                    style="@style/editeText_style_2" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:layout_alignParentBottom="true"
+        >
+        <Button
+            android:id="@+id/hall_demend_detail_sc"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="收藏"/>
+        <Button
+            android:id="@+id/hall_demend_lianxi"
+            android:layout_marginStart="1dp"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:background="@color/blue"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:text="联系客服"/>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
