@@ -52,10 +52,7 @@ public class Downlod_Pdf_Activity extends BaseActivity implements View.OnClickLi
             tv_pdf.setText("pdf预览");
         }
 
-        if(!TextUtils.isEmpty(reportUrl)){
-            fileUrl=reportUrl;
-            LUtils.e("-------fileUrl-------", fileUrl);
-        }
+
         if (reportId != 0) {
 //            "static.jxzcbd.com/pdf/"+userId+"/"+reportId+".pdf";
 //            String url="http://static.jxzcbd.com/pdf/"+userId+"/"+reportId+".pdf";
@@ -68,27 +65,7 @@ public class Downlod_Pdf_Activity extends BaseActivity implements View.OnClickLi
         iv_pdf_finish = findViewById(R.id.iv_pdf_finish);
         iv_pdf_finish.setOnClickListener(this);
         pro = findViewById(R.id.pro);
-        pdf_show_webview.setWebViewClient(new WebViewClient() {
-            @Override
-            public boolean shouldOverrideUrlLoading(android.webkit.WebView view, String url) {
-                // 返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
-                view.loadUrl(url);
-                return true;
-            }
-
-            @Override
-            public void onPageStarted(android.webkit.WebView view, String url, Bitmap favicon) {
-                super.onPageStarted(view, url, favicon);
-                pro.setVisibility(View.VISIBLE);
-            }
-
-            @Override
-            public void onPageFinished(android.webkit.WebView view, String url) {
-                super.onPageFinished(view, url);
-                pro.setVisibility(View.GONE);
-            }
-        });
-
+        pdf_show_webview.setWebViewClient(webViewClient);
         WebSettings settings = pdf_show_webview.getSettings();
         settings.setSavePassword(false);
         settings.setJavaScriptEnabled(true);
@@ -98,20 +75,43 @@ public class Downlod_Pdf_Activity extends BaseActivity implements View.OnClickLi
         pdf_show_webview.setWebChromeClient(new WebChromeClient());
 
 
-        if (!"".equals(fileUrl)) {
+        if (!TextUtils.isEmpty(reportUrl)) {
+            LUtils.e("-------fileUrl-------", reportUrl);
             byte[] bytes = null;
             try {// 获取以字符编码为utf-8的字符
-                bytes = fileUrl.getBytes("UTF-8");
+                bytes = reportUrl.getBytes("UTF-8");
             } catch (UnsupportedEncodingException e1) {
                 e1.printStackTrace();
             }
             if (bytes != null) {
                 fileUrl = new BASE64Encoder().encode(bytes);// BASE64转码
             }
+            pdf_show_webview.loadUrl("file:///android_asset/pdfjs/web/viewer.html?file="
+                    + fileUrl);
         }
-        pdf_show_webview.loadUrl("file:///android_asset/pdfjs/web/viewer.html?file="
-                + fileUrl);
+
     }
+
+    private WebViewClient webViewClient= new WebViewClient() {
+        @Override
+        public boolean shouldOverrideUrlLoading(android.webkit.WebView view, String url) {
+            // 返回值是true的时候控制去WebView打开，为false调用系统浏览器或第三方浏览器
+            view.loadUrl(url);
+            return true;
+        }
+
+        @Override
+        public void onPageStarted(android.webkit.WebView view, String url, Bitmap favicon) {
+            super.onPageStarted(view, url, favicon);
+            pro.setVisibility(View.VISIBLE);
+        }
+
+        @Override
+        public void onPageFinished(android.webkit.WebView view, String url) {
+            super.onPageFinished(view, url);
+            pro.setVisibility(View.GONE);
+        }
+    };
 
     @Override
     public void onClick(View v) {

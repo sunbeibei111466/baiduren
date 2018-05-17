@@ -5,8 +5,11 @@ import android.content.Context;
 import android.content.pm.PackageInfo;
 import android.content.pm.PackageManager;
 import android.content.res.AssetManager;
+import android.graphics.Color;
 import android.graphics.Point;
 import android.graphics.Rect;
+import android.os.Build;
+import android.support.v7.app.ActionBar;
 import android.text.TextUtils;
 import android.util.DisplayMetrics;
 import android.view.Display;
@@ -17,6 +20,7 @@ import android.widget.Toast;
 
 import com.google.gson.Gson;
 import com.yl.baiduren.App;
+import com.yl.baiduren.R;
 import com.yl.baiduren.base.BaseEntity;
 
 import java.io.File;
@@ -457,10 +461,31 @@ public class Util {
                     flag = true;
                 }
             }
-        }else {
+        } else {
             LUtils.e("----------空空空空------");
         }
         return flag;
     }
+
+    public void setCJ(Activity context) {
+        if (Build.VERSION.SDK_INT >= 21) {
+            View decorView = context.getWindow().getDecorView();
+            int aa = View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN |
+                    View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            //界面默认情况下是全屏的，状态栏和导航栏都不会显示。而当我们需要用到状态栏或导航栏时，
+            // 只需要在屏幕顶部向下拉，或者在屏幕右侧向左拉，状态栏和导航栏就会显示出来
+            int cc = View.SYSTEM_UI_FLAG_LAYOUT_STABLE
+                    | View.SYSTEM_UI_FLAG_LAYOUT_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_LAYOUT_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    | View.SYSTEM_UI_FLAG_FULLSCREEN
+                    | View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY;
+            decorView.setSystemUiVisibility(cc);
+            context.getWindow().setStatusBarColor(Color.TRANSPARENT);
+            context.getWindow().setNavigationBarColor(Color.TRANSPARENT);
+
+        }
+    }
+
 }
 

@@ -58,7 +58,6 @@ public class Login_Activity_Password extends BaseActivity implements View.OnClic
 
     @Override
     public void initViews() {
-
         UserInfoUtils.deleteBaseRequest(this);
         UserInfoUtils.deleteLoginSuccess(this);
         UserInfoUtils.deleteMyPager(this);
@@ -88,6 +87,12 @@ public class Login_Activity_Password extends BaseActivity implements View.OnClic
         regiser = findViewById(R.id.login_regiver2);
         regiser.setOnClickListener(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Util.getInstance().setCJ(this);
     }
 
     private void initEdit() {

@@ -4,6 +4,8 @@ import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
+import android.graphics.Color;
+import android.os.Build;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -376,4 +378,6 @@ public class ForeFragment extends BaseFragment implements View.OnClickListener {
         super.onDetach();
         getActivity().unregisterReceiver(mBroadcastReceiver);
     }
+
+
 }

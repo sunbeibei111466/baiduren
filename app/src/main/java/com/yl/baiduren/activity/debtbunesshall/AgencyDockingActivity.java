@@ -15,6 +15,7 @@ import com.yl.baiduren.service.ServiceUrl;
 public class AgencyDockingActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView iv_shuoming;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +25,14 @@ public class AgencyDockingActivity extends AppCompatActivity implements View.OnC
         iv_shuoming.setOnClickListener(this);
 
 
-        WebView webView = findViewById(R.id.debt_agency_name);
+        webView = findViewById(R.id.debt_agency_name);
         com.tencent.smtt.sdk.WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);//支持js
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
         webSettings.setPluginsEnabled(true);//支持插件
         webSettings.setDomStorageEnabled(true);//开启js dom storage api功能
+        //这似乎是因为硬件加速canvas渲染不支持Chromium WebView，这一行代码可以关闭硬件加速的canvas
+        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         webView.loadUrl(ServiceUrl.H5_JG_PATH);
     }
 
@@ -37,6 +40,7 @@ public class AgencyDockingActivity extends AppCompatActivity implements View.OnC
     public void onClick(View v) {
         if (v == iv_shuoming) {
             finish();
+            webView.destroy();
         }
     }
 }

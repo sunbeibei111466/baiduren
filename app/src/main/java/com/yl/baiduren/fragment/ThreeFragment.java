@@ -48,6 +48,7 @@ public class ThreeFragment extends BaseFragment {
 
     @Override
     public void initViews(View rootView) {
+
         angle_refresh = rootView.findViewById(R.id.angle_refresh);//刷新
         angle_refresh.setMaterialRefreshListener(refreshListener);
         recyclerView = rootView.findViewById(R.id.angle_recycle);//列表
@@ -145,6 +146,7 @@ public class ThreeFragment extends BaseFragment {
             requstWork();
         }
     };
+
 
 
 }

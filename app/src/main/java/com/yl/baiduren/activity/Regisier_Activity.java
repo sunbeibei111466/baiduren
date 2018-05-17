@@ -81,6 +81,12 @@ public class Regisier_Activity extends BaseActivity implements View.OnClickListe
         LUtils.e("---------友盟--------" + PushAgent.getInstance(this).getRegistrationId());
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Util.getInstance().setCJ(this);
+    }
+
     private void isEdit() {
         String name = user_name.getText().toString();
         byte[] b = name.getBytes();

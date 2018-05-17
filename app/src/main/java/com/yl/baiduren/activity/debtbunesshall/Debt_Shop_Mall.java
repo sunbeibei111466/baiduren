@@ -16,6 +16,8 @@ import android.support.v4.content.ContextCompat;
 import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ProgressBar;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -63,6 +65,7 @@ public class Debt_Shop_Mall extends BaseActivity implements View.OnClickListener
     private static final int SCAN_CODE = ABLUM_PERMISSIONS_REQUEST_CODE + 1;
     private TextView iv_shop_mall_text;
     String http = "http://shop.jxzcbd.com/mobile/Order/order_detail/id/";
+    private ProgressBar progressBar1;
 
     @Override
     public int loadWindowLayout() {
@@ -81,8 +84,10 @@ public class Debt_Shop_Mall extends BaseActivity implements View.OnClickListener
         RelativeLayout mMainLayout = findViewById(R.id.ll_shop_layout);
         ImageView iv_shop_mall_back = findViewById(R.id.iv_shop_mall_back);
         iv_shop_mall_back.setOnClickListener(this);
+        progressBar1=findViewById(R.id.progressBar1);
         webview_mall = findViewById(R.id.webview_mall);
-
+        //这似乎是因为硬件加速canvas渲染不支持Chromium WebView，这一行代码可以关闭硬件加速的canvas
+        webview_mall.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         String url;
         if (UserInfoUtils.IsLogin(this)) { //App用户已登录
             iv_shop_mall_text.setVisibility(View.GONE);
@@ -153,6 +158,18 @@ public class Debt_Shop_Mall extends BaseActivity implements View.OnClickListener
      * android webview 兼容相机相册选择
      */
     private WebChromeClient webChromeClient = new WebChromeClient() {
+        @Override
+        public void onProgressChanged(WebView webView, int i) {
+            if(i==100){
+                progressBar1.setVisibility(View.GONE);//加载完网页进度条消失
+            }
+            else{
+                progressBar1.setVisibility(View.VISIBLE);//开始加载网页时显示进度条
+                progressBar1.setProgress(i);//设置进度值
+            }
+            super.onProgressChanged(webView, i);
+        }
+
         @Override
         public boolean onJsAlert(WebView webView, String s, String s1, JsResult jsResult) {
             if (s1 != null) {
@@ -346,6 +363,7 @@ public class Debt_Shop_Mall extends BaseActivity implements View.OnClickListener
                     return true;
                 } else {//如果WebView不能回退
                     finish();
+                    webview_mall.destroy();
                 }
                 break;
             case KeyEvent.KEYCODE_SEARCH://当
@@ -364,8 +382,10 @@ public class Debt_Shop_Mall extends BaseActivity implements View.OnClickListener
         } else if (v == iv_shop_mall_text) {//登陆
             startActivity(new Intent(Debt_Shop_Mall.this, Login_Activity_Password.class).putExtra("backPage", 4));
             finish();
+            webview_mall.destroy();
         } else {//如果WebView不能回退
             finish();
+            webview_mall.destroy();
         }
     }
 

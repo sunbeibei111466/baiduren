@@ -48,6 +48,7 @@ public class Forget_Password_Activity extends BaseActivity implements View.OnCli
 
     @Override
     public void initViews() {
+
         iv_title_left = findViewById(R.id.iv_title_left);
         iv_title_left.setOnClickListener(this);
         //手机号
@@ -65,6 +66,12 @@ public class Forget_Password_Activity extends BaseActivity implements View.OnCli
         complte = findViewById(R.id.complete);
         complte.setOnClickListener(this);
 
+    }
+
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Util.getInstance().setCJ(this);
     }
 
     private void initEdit() {

@@ -197,6 +197,10 @@ public class Add_New_Natural_Person extends BaseFragment implements View.OnClick
         @Override
         public void onHanlderSuccess(int reqeustCode, List<PhotoInfo> resultList) {
             if (resultList != null && resultList.size() != 0) {
+                for (int i = 0; i <resultList.size() ; i++) {
+                    LUtils.e("图片地址+++++++",resultList.get(i).getPhotoPath());
+
+                }
                 loadImage(ImageUtils.comperssImage(resultList));//获取图片地址
             }
         }
@@ -216,6 +220,8 @@ public class Add_New_Natural_Person extends BaseFragment implements View.OnClick
     private void loadImage(List<File> resultList) {
         List<MultipartBody.Part> partsList = new ArrayList<>(resultList.size());
         for (int i = 0; i < resultList.size(); i++) {
+            LUtils.e( "获取绝对路径"+resultList.get(i).getAbsolutePath());
+            LUtils.e( "获取路径"+resultList.get(i).getPath());
             File file = new File(resultList.get(i).getPath());
             RequestBody requestBody = RequestBody.create(MediaType.parse("image/png"), file);
             MultipartBody.Part part = MultipartBody.Part.createFormData("file", file.getName(), requestBody);

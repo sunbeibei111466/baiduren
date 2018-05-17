@@ -3,6 +3,11 @@ package com.yl.baiduren.utils;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
+import android.os.Build;
+import android.support.v4.content.FileProvider;
+import android.util.Log;
+
+import com.yl.baiduren.App;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -27,9 +32,9 @@ public class ImageUtils {
 
         List<File> fileList = null;
         if (photoInfoList.size() != 0) {
-            fileList=new ArrayList<>();
+            fileList = new ArrayList<>();
             for (int i = 0; i < photoInfoList.size(); i++) {
-                File file = ImageUtils.scal(Uri.parse(photoInfoList.get(i).getPhotoPath()),i);
+                File file = ImageUtils.scal(Uri.parse(photoInfoList.get(i).getPhotoPath()), i);
                 fileList.add(file);
                 LUtils.e("-------压缩后-------" + file.length() / 1024);
                 LUtils.e("-------压缩后---file----" + file.getPath());
@@ -46,9 +51,10 @@ public class ImageUtils {
      * @param fileUri
      * @return
      */
-    public static File scal(Uri fileUri,int i) {
+    public static File scal(Uri fileUri, int i) {
         String path = fileUri.getPath();
         File outputFile = new File(path);
+        LUtils.e("-------压缩前文件路劲-------------+" + outputFile);
         long fileSize = outputFile.length();
         final long fileMaxSize = 200 * 1024;
         if (fileSize >= fileMaxSize) {
@@ -64,6 +70,7 @@ public class ImageUtils {
             options.inJustDecodeBounds = false;
             Bitmap bitmap = BitmapFactory.decodeFile(path, options);
             outputFile = new File(createImageFile(i).getPath());
+            LUtils.e("-------压缩后文件路劲-------------+" + outputFile);
             FileOutputStream fos = null;
             try {
                 fos = new FileOutputStream(outputFile);
@@ -71,6 +78,7 @@ public class ImageUtils {
                 fos.close();
             } catch (IOException e) {
                 // TODO Auto-generated catch block
+                LUtils.e("-------文件 压缩存 ----失败---------+" + e.getMessage());
                 e.printStackTrace();
             }
             if (!bitmap.isRecycled()) {
@@ -81,28 +89,52 @@ public class ImageUtils {
                 copyFileUsingFileChannels(tempFile, outputFile);
             }
 
+        } else {
+            LUtils.e("文件小于 200*1024");
         }
         return outputFile;
     }
 
     public static Uri createImageFile(int i) {
-        // Create an image file name
+        Uri uri = null;
         String timeStamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-        String imageFileName = "JPEG_" + timeStamp+i;
-        File storageDir = new File(Constant.COMPERSS_IMAGE);
-        if (!storageDir.exists()) {
-            storageDir.mkdirs();
-        }
-        File image = null;
+        String imageFileName = "JPEG_" + timeStamp + i;
+
         try {
-            image = new File(storageDir, imageFileName + ".jpg");
-            image.createNewFile();
+            File image = new File(getCreateFilePath(), imageFileName + ".jpg");
+            if (!image.isDirectory()) {
+                LUtils.e("----不存在----");
+                image.createNewFile();
+                uri = Uri.fromFile(image);
+//                if(Build.VERSION.SDK_INT>=24){//Android sdk版本大于7.0
+//
+//                    uri=FileProvider.getUriForFile(App.getContext(), "com.yl.baiduren", image);
+//                    LUtils.e("------->=24------"+uri);
+//                }else {
+
+//                }
+
+            }
+
         } catch (IOException e) {
             // TODO Auto-generated catch block
+            LUtils.e("-----创建文件失败----------" + e.getMessage());
             e.printStackTrace();
         }
 
-        return Uri.fromFile(image);
+        return uri;
+    }
+
+    private static File getCreateFilePath() {
+        File storageDir = new File(Constant.COMPERSS_IMAGE);
+        if (!storageDir.exists()) {
+            boolean isSuccess = storageDir.mkdirs();
+            LUtils.e("-----不存在文件时------创建文件夹----" + storageDir.getAbsolutePath());
+            LUtils.e("-----文件夹没有创建成功-" + isSuccess);
+        } else {
+            LUtils.e("-----存在文件时----------");
+        }
+        return storageDir;
     }
 
     private static void copyFileUsingFileChannels(File source, File dest) {
@@ -128,23 +160,25 @@ public class ImageUtils {
             }
         }
     }
+
     /**
      * 获或报告存储路径
+     *
      * @return
      */
-    public static Uri getReportUrl(String reportName){
+    public static Uri getReportUrl(String reportName) {
         String timeStamp = new SimpleDateFormat("MMdd_HHmmss").format(new Date());
         String fileName = reportName + timeStamp;
         File storageDir = new File(Constant.REPORT);
         if (!storageDir.exists()) {
             storageDir.mkdirs();
             LUtils.e("------文件夹不存在-----");
-        }else {
+        } else {
             LUtils.e("------文件夹存在-----");
         }
-        File file=null;
+        File file = null;
         try {
-            LUtils.e("-----timeStamp--fileName--",timeStamp+"------"+fileName);
+            LUtils.e("-----timeStamp--fileName--", timeStamp + "------" + fileName);
             file = new File(storageDir, fileName + ".pdf");
             file.createNewFile();
 

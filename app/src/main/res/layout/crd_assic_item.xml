@@ -1,100 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/ll_demand_parent"
     android:layout_width="match_parent"
     android:layout_height="100dp"
     android:layout_marginEnd="5dp"
     android:layout_marginStart="5dp"
     android:layout_marginTop="5dp"
-    android:background="@drawable/yet_claimed_item"
-    android:orientation="horizontal"
-    android:gravity="center_vertical"
-    android:id="@+id/ll_demand_parent"
-    >
-    <ImageView
-        android:id="@+id/iv_crd_assic"
-        android:layout_width="90dp"
-        android:layout_height="80dp"
-        android:layout_marginLeft="15dp"/>
+    app:cardBackgroundColor="@color/white"
+    app:cardCornerRadius="6dp"
+    android:gravity="center_vertical">
+
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="15dp"
-        android:gravity="center_vertical"
-        android:orientation="vertical">
-        <LinearLayout
-            style="@style/line3_style">
-            <TextView
-                android:id="@+id/tv_need_name"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_weight="10"
-                android:textStyle="bold"
-                android:textSize="13sp"
-                android:textColor="@color/light_hei"
-                />
-            <ImageView
-                android:id="@+id/iv_delete"
-                android:layout_width="0dp"
-                android:layout_height="20dp"
-                android:layout_weight="2"
-                android:src="@mipmap/delete"
-                android:layout_gravity="center"/>
-
-        </LinearLayout>
-        <LinearLayout
-            style="@style/line3_style">
-            <TextView
-                android:id="@+id/gu_jia"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/blue"
-                android:text="金额:"/>
-            <TextView
-                android:id="@+id/tv_crd_amout"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/blue"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/line3_style">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/creditor_rights"
-                android:text="地区:"/>
-            <TextView
-                android:id="@+id/tv_crd_area"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/creditor_rights"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
-        <LinearLayout
-            style="@style/line3_style">
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/creditor_rights"
-                android:text="描述:"/>
-            <TextView
-                android:id="@+id/tv_crd_beizhu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="12sp"
-                android:textColor="@color/creditor_rights"
-                android:layout_marginStart="10dp"/>
-        </LinearLayout>
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
 
+        <ImageView
+            android:id="@+id/iv_crd_assic"
+            android:layout_width="90dp"
+            android:layout_height="80dp"
+            android:layout_marginLeft="15dp" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginLeft="15dp"
+            android:gravity="center_vertical"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/line3_style">
+
+                <TextView
+                    android:id="@+id/tv_need_name"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="10"
+                    android:textColor="@color/light_hei"
+                    android:textSize="13sp"
+                    android:textStyle="bold" />
+
+                <ImageView
+                    android:id="@+id/iv_delete"
+                    android:layout_width="0dp"
+                    android:layout_height="20dp"
+                    android:layout_gravity="center"
+                    android:layout_weight="2"
+                    android:src="@mipmap/delete" />
+
+            </LinearLayout>
+
+            <LinearLayout style="@style/line3_style">
+
+                <TextView
+                    android:id="@+id/gu_jia"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="金额:"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_crd_amout"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/blue"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line3_style">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="地区:"
+                    android:textColor="@color/creditor_rights"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_crd_area"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/creditor_rights"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+            <LinearLayout style="@style/line3_style">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="描述:"
+                    android:textColor="@color/creditor_rights"
+                    android:textSize="12sp" />
+
+                <TextView
+                    android:id="@+id/tv_crd_beizhu"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:textColor="@color/creditor_rights"
+                    android:textSize="12sp" />
+            </LinearLayout>
+
+
+        </LinearLayout>
     </LinearLayout>
-
-</LinearLayout>
+</android.support.v7.widget.CardView>
 

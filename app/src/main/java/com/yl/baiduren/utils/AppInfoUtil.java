@@ -19,13 +19,14 @@ import java.util.List;
 
 public class AppInfoUtil {
 
-    public static boolean isForce=false;//是否强制更新
+    public static boolean isForce = false;//是否强制更新
 
     /**
      * 判断是否有根新
+     *
      * @param serviceVersion 服务器版本
      */
-    public static boolean whetherToUpdate(String serviceVersion){
+    public static boolean whetherToUpdate(String serviceVersion) {
 
         //本地版本
         String lockVersion = AppInfoUtil.getVersionName();
@@ -34,12 +35,13 @@ public class AppInfoUtil {
 
     /**
      * 设置是否强制更新
+     *
      * @param force 服务器版本
      */
-    public static boolean setForceUpdate(String force){
+    public static boolean setForceUpdate(String force) {
 
         if (force.equals("1")) { //强制更新
-            isForce=true;
+            isForce = true;
             return isForce;
         }
         return false;
@@ -47,12 +49,12 @@ public class AppInfoUtil {
 
     /**
      * 获取是否强制更新  true强制更新
+     *
      * @return
      */
-    public static boolean getForceUpdate(){
+    public static boolean getForceUpdate() {
         return isForce;
     }
-
 
 
     /**
@@ -144,16 +146,34 @@ public class AppInfoUtil {
 
         return TextUtils.isEmpty(channel) ? "" : channel;
     }
-    //    检查版本更新，跳转到360进行下载
-       public static void intit_getClick(Context context) {
 
-           Uri uri = Uri.parse("http://zhushou.360.cn/detail/index/soft_id/3976593");
-            Intent it = new Intent(Intent.ACTION_VIEW, uri);
-            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-            context.startActivity(it);
+    //    检查版本更新，跳转到360进行下载
+    public static void intit_getClick(Context context) {
+
+        Uri uri = Uri.parse("http://zhushou.360.cn/detail/index/soft_id/3976593");
+        Intent it = new Intent(Intent.ACTION_VIEW, uri);
+        it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        context.startActivity(it);
 
     }
 
+
+
+    //    检查版本更新，跳转到360进行下载
+    public static void init360(Context context, String packName) {
+
+        if (isAvilible(context,"com.qihoo.appstore")) {
+            // 市场存在
+            launchAppDetail(context, packName,"com.qihoo.appstore");
+        } else {
+            Uri uri = Uri.parse("http://zhushou.360.cn/detail/index/soft_id/3976593");
+            Intent it = new Intent(Intent.ACTION_VIEW, uri);
+            it.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            context.startActivity(it);
+        }
+
+
+    }
 
   /*  //    检查版本更新，跳转到腾讯应用宝进行下载
     public static void intit_getClick(Context context, String packName) {
@@ -242,7 +262,6 @@ public class AppInfoUtil {
 //            intit_getClick(context,packName,ConstUtils.YYB_SC);
 //        }
 //    }
-
 
 
     /**

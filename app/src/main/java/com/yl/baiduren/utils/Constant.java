@@ -39,7 +39,7 @@ public class Constant {
     public static String MY_SC_GY="MY_SC_GY";//我的收藏大厅   供应端
     public static String MY_SC_XQ="MY_SC_XQ";//我的收藏大厅   需求端
 
-//    /storage/emulated/0/photos_zx
+//    /storage/emulated/0/zhenxing_app
     public static String COMPERSS_IMAGE= Environment.getExternalStorageDirectory()
         .getAbsolutePath() + File.separator + "zhenxing_app";//压缩图片存储路径
 

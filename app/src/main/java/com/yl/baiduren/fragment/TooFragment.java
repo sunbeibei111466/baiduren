@@ -8,6 +8,7 @@ import com.yl.baiduren.R;
 import com.yl.baiduren.activity.debtbunesshall.Break_Debt_Activity;
 import com.yl.baiduren.base.BaseFragment;
 import com.yl.baiduren.service.ServiceUrl;
+import com.yl.baiduren.utils.Util;
 
 public class TooFragment extends BaseFragment implements View.OnClickListener{
 
@@ -23,7 +24,6 @@ public class TooFragment extends BaseFragment implements View.OnClickListener{
 
     @Override
     public void initViews(View rootView) {
-
         new_1=rootView.findViewById(R.id.new_1);
         new_2=rootView.findViewById(R.id.new_2);
         new_3=rootView.findViewById(R.id.new_3);
@@ -49,4 +49,6 @@ public class TooFragment extends BaseFragment implements View.OnClickListener{
         }
         startActivity(intent);
     }
+
+
 }

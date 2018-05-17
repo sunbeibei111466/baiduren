@@ -58,6 +58,14 @@
             </LinearLayout>
         </LinearLayout>
 
+        <ProgressBar
+            android:id="@+id/progressBar1"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="match_parent"
+            android:layout_height="3dip"
+            android:visibility="gone"
+            />
+
         <com.tencent.smtt.sdk.WebView
             android:id="@+id/webview_mall"
             android:layout_width="match_parent"

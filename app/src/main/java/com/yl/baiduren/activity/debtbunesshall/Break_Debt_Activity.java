@@ -1,9 +1,13 @@
 package com.yl.baiduren.activity.debtbunesshall;
 
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.TextView;
 
+import com.tencent.smtt.sdk.WebChromeClient;
+import com.tencent.smtt.sdk.WebView;
 import com.yl.baiduren.R;
 import com.yl.baiduren.base.BaseActivity;
 import com.yl.baiduren.utils.LUtils;
@@ -15,6 +19,8 @@ import com.yl.baiduren.utils.LUtils;
 public class Break_Debt_Activity extends BaseActivity implements View.OnClickListener {
 
     private ImageView iv_buness_hall_back;
+    private com.tencent.smtt.sdk.WebView webView;
+    private ProgressBar progressBar2;
 
     @Override
     public int loadWindowLayout() {
@@ -51,45 +57,64 @@ public class Break_Debt_Activity extends BaseActivity implements View.OnClickLis
         }
         iv_buness_hall_back = findViewById(R.id.iv_buness_hall_back);
         iv_buness_hall_back.setOnClickListener(this);
-        com.tencent.smtt.sdk.WebView webView = findViewById(R.id.webview);
+        progressBar2=findViewById(R.id.progressBar2);
+         webView = findViewById(R.id.webview);
         webView.setWebViewClient(new com.tencent.smtt.sdk.WebViewClient());
+        webView.setWebChromeClient(webChromeClient);
         com.tencent.smtt.sdk.WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);//支持js
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
         webSettings.setPluginsEnabled(true);//支持插件
         webSettings.setDomStorageEnabled(true);//开启js dom storage api功能
+        //这似乎是因为硬件加速canvas渲染不支持Chromium WebView，这一行代码可以关闭硬件加速的canvas
+        webView.setLayerType(View.LAYER_TYPE_SOFTWARE, null);
         webView.loadUrl(url);
 
     }
+    private WebChromeClient webChromeClient=new WebChromeClient(){
+        @Override
+        public void onProgressChanged(WebView webView, int i) {
+            if(i==100){
+                progressBar2.setVisibility(View.GONE);//加载完网页进度条消失
+            }
+            else{
+                progressBar2.setVisibility(View.VISIBLE);//开始加载网页时显示进度条
+                progressBar2.setProgress(i);//设置进度值
+            }
+            super.onProgressChanged(webView, i);
+        }
+    };
 
 
-//    @Override
-//    public boolean onKeyDown(int keyCode, KeyEvent event) {
-//        switch (keyCode) {
-//            case KeyEvent.KEYCODE_BACK://处理返回键事件
-//                if (webView.canGoBack()) {
-//                    webView.goBack();//让WebView回退到上一个网页
-//                    return true;
-//                } else {//如果WebView不能回退
-//                    finish();
-//                }
-//                break;
-//            case KeyEvent.KEYCODE_SEARCH://当
-//                break;
-//            default:
-//                break;
-//        }
-//        return false;
-//    }
+    @Override
+    public boolean onKeyDown(int keyCode, KeyEvent event) {
+        switch (keyCode) {
+            case KeyEvent.KEYCODE_BACK://处理返回键事件
+                if (webView.canGoBack()) {
+                    webView.goBack();//让WebView回退到上一个网页
+                    return true;
+                } else {//如果WebView不能回退
+                    finish();
+                    webView.destroy();
+                }
+                break;
+            case KeyEvent.KEYCODE_SEARCH://当
+                break;
+            default:
+                break;
+        }
+        return false;
+    }
 
     @Override
     public void onClick(View v) {
         if (v == iv_buness_hall_back) {
-//            if (webView.canGoBack()) {
-//                webView.goBack();//让WebView回退到上一个网页
-//            } else {
+            if (webView.canGoBack()) {
+                webView.goBack();//让WebView回退到上一个网页
+            } else {
                 finish();
-//            }
+                webView.destroy();
+            }
         }
     }
 }

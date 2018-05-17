@@ -1,6 +1,12 @@
 package com.yl.baiduren.activity.mypager;
 
+import android.Manifest;
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
@@ -275,7 +281,8 @@ public class PersonalInformation extends BaseActivity implements View.OnClickLis
                     @Override
                     protected void onSuccees(String code, String data, BaseRequest baseResponse) throws Exception {
                         if (code.equals("1")) {//成功
-                            finish();
+                            ToastUtil.showShort(PersonalInformation.this,"修改成功");
+                            getUsetInfo();
                         }
                     }
                 });
@@ -302,7 +309,7 @@ public class PersonalInformation extends BaseActivity implements View.OnClickLis
      *
      * @param resultList
      */
-    private void updataUserImage(List<File> resultList) {
+    private void  updataUserImage(List<File> resultList) {
 
         List<MultipartBody.Part> partsList = new ArrayList<>(resultList.size());
         for (int i = 0; i < resultList.size(); i++) {
@@ -333,5 +340,29 @@ public class PersonalInformation extends BaseActivity implements View.OnClickLis
                 });
     }
 
-
+//
+//    @Override
+//    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        if(requestCode==1){
+//            if(permissions[0].equals(Manifest.permission.WRITE_EXTERNAL_STORAGE) &&
+//            grantResults[0] == PackageManager.PERMISSION_GRANTED){
+//                text();
+//            }
+//        }
+//    }
+//
+//    private void text() {
+//        if (ContextCompat.checkSelfPermission(PersonalInformation.this, Manifest.permission.CAMERA)
+//                != PackageManager.PERMISSION_GRANTED) {
+//            ActivityCompat.requestPermissions( PersonalInformation.this, new String[]{Manifest.permission.CAMERA}, 1);
+//        }
+//
+//        File storageDir = new File(Constant.COMPERSS_IMAGE);
+//        if (!storageDir.exists()) {
+//            boolean isSuccess = storageDir.mkdirs();
+//            LUtils.e("-----不存在文件时------创建文件夹----" + storageDir.getAbsolutePath());
+//            LUtils.e("-----文件夹没有创建成功-" + isSuccess);
+//        }
+//    }
 }

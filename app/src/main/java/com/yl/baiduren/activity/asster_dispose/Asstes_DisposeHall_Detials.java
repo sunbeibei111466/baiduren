@@ -1,11 +1,13 @@
 package com.yl.baiduren.activity.asster_dispose;
 
+import android.content.Intent;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.yl.baiduren.Downlod_Pdf_Activity;
 import com.yl.baiduren.R;
 import com.yl.baiduren.base.BaseActivity;
 import com.yl.baiduren.base.BaseEntity;
@@ -42,6 +44,8 @@ public class Asstes_DisposeHall_Detials extends BaseActivity {
     private TextView tv_hall_asstes_detials_sl,tv_xingy_baogao;
     private Button bt_lxkf;
     private boolean isuyCredit=false;//是否购买报告
+    private TextView querry;
+    private String reportUrl;
 
     @Override
     public int loadWindowLayout() {
@@ -60,6 +64,8 @@ public class Asstes_DisposeHall_Detials extends BaseActivity {
         dispose_asset_detials_back = findViewById(R.id.dispose_asset_detials_back);
         dispose_asset_detials_back.setOnClickListener(listener);
         detail_image_detials = findViewById(R.id.detail_image_detials);
+        querry = findViewById(R.id.querry);//预览
+        querry.setOnClickListener(listener);
         bt_lxkf = findViewById(R.id.bt_lxkf);//联系我们
         bt_lxkf.setOnClickListener(listener);
         tv_xingy_baogao=findViewById(R.id.tv_xingy_baogao);
@@ -87,6 +93,8 @@ public class Asstes_DisposeHall_Detials extends BaseActivity {
 
         String signature = SecurityUtils.md5Signature(json, SecurityUtils.privateKeyTest);//加密
         BaseObserver<Supply_Demend_Details_Result> baseObserver = new BaseObserver<Supply_Demend_Details_Result>(this) {
+
+
 
             @Override
             protected void onSuccees(String code, Supply_Demend_Details_Result data, BaseRequest baseResponse) throws Exception {
@@ -117,10 +125,12 @@ public class Asstes_DisposeHall_Detials extends BaseActivity {
 
 
                     isuyCredit=data.getBuyCredit();//是否购买报告
+                    reportUrl = data.getReportUrl();
                     if(isuyCredit){
                         tv_xingy_baogao.setText("信用报告(已购买)");
                     }else{
                         tv_xingy_baogao.setText("信用报告(未购买)");
+                        querry.setVisibility(View.GONE);
                     }
                 }
             }
@@ -144,6 +154,10 @@ public class Asstes_DisposeHall_Detials extends BaseActivity {
                 setRghtImage();
             } else if (v == bt_lxkf) {
                 DialogUtils.showPhone(Asstes_DisposeHall_Detials.this);
+            }else if (v==querry){
+                if (reportUrl!=null){
+                    startActivity(new Intent(Asstes_DisposeHall_Detials.this,Downlod_Pdf_Activity.class).putExtra("reportUrl",reportUrl));
+                }
             }
         }
     };

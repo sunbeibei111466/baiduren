@@ -62,7 +62,7 @@ public class App extends Application {
         //全局异常捕获累类
         CrashHandler.getInstance().init(this);
         //是否需要打印log  上线后关闭
-        LUtils.isDebug = false;
+        LUtils.isDebug = true;
         //初始化各类sdk等
         MyInitializeService.start(context);
     }
@@ -235,4 +235,6 @@ public class App extends Application {
                 .setFunctionConfig(functionConfig).build();
         GalleryFinal.init(coreConfig);
     }
+
+
 }

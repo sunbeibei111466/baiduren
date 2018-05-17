@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.graphics.drawable.ColorDrawable;
+import android.os.Build;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.view.Gravity;
@@ -62,17 +63,44 @@ public class Photo_Select {
         });
 
 
+
         camer.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA) != PackageManager.PERMISSION_GRANTED) {
-                    ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.CAMERA}, 1);
 
-                }else{
-                    GalleryFinal.openCamera(REQUEST_CODE_CAMERA, callback);
-                    popupWindow.dismiss();
-                    Util.backgroundAlpha((Activity) mContext, 1f);
-                }
+//                if(Build.VERSION.SDK_INT>=26){
+                    //。判断是否开启写权限 相机权限
+                    if(ActivityCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                            != PackageManager.PERMISSION_GRANTED
+                            &&
+                            ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA)
+                                    != PackageManager.PERMISSION_GRANTED){
+                        //申请写权限  相机权限
+                        ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA}, 1);
+                    }else {
+                        GalleryFinal.openCamera(REQUEST_CODE_CAMERA, callback);
+                        popupWindow.dismiss();
+                        Util.backgroundAlpha((Activity) mContext, 1f);
+
+                    }
+//                }else {
+//                    if (ContextCompat.checkSelfPermission(mContext, Manifest.permission.CAMERA)
+//                            != PackageManager.PERMISSION_GRANTED) {
+//                        //申请权限
+//                        ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.CAMERA}, 1);
+//                    }
+//                    else {
+//                        GalleryFinal.openCamera(REQUEST_CODE_CAMERA, callback);
+//                        popupWindow.dismiss();
+//                        Util.backgroundAlpha((Activity) mContext, 1f);
+//
+//                    }
+//                }
+
+
+
+
+
 
 
 
@@ -83,10 +111,17 @@ public class Photo_Select {
             @Override
             public void onClick(View v) {
 
-                FunctionConfig config = new FunctionConfig.Builder().setMutiSelectMaxSize(phoneShu - cum).build();
-                GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, config, callback);
-                popupWindow.dismiss();
-                Util.backgroundAlpha((Activity) mContext, 1f);
+                if(ActivityCompat.checkSelfPermission(mContext, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                        != PackageManager.PERMISSION_GRANTED){
+                    ActivityCompat.requestPermissions((Activity) mContext, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE}, 1);
+                }else {
+                    FunctionConfig config = new FunctionConfig.Builder().setMutiSelectMaxSize(phoneShu - cum).build();
+                    GalleryFinal.openGalleryMuti(REQUEST_CODE_GALLERY, config, callback);
+                    popupWindow.dismiss();
+                    Util.backgroundAlpha((Activity) mContext, 1f);
+                }
+
+
             }
         });
         cancle.setOnClickListener(new View.OnClickListener() {

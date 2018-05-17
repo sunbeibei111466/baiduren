@@ -84,6 +84,12 @@ public class Login_Activity_Yzm extends BaseActivity implements View.OnClickList
 
     }
 
+    @Override
+    protected void onResume() {
+        super.onResume();
+        Util.getInstance().setCJ(this);
+    }
+
     private void initEdit() {
         String phone = login_phone.getText().toString();
         String code = et_code.getText().toString();

@@ -3,6 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.yl.baiduren">
 
+
+
+
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
@@ -10,7 +13,6 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
-
 
     <!-- 推送 下面列出的是必选的权限，还有可选的权限没有列出，例如前台是否可以显示通知这个可选权限 -->
     <uses-permission android:name="android.permission.WRITE_SETTINGS" />
@@ -35,6 +37,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         tools:replace="android:icon">
+
+
 
         <!-- 消息推送的appkey -->
         <meta-data
@@ -75,6 +79,7 @@
             android:name="com.alipay.sdk.app.H5PayActivity"
             android:configChanges="orientation|keyboardHidden|navigation"
             android:exported="false"
+
             android:screenOrientation="behind" />
         <activity
             android:name="com.alipay.sdk.auth.AuthActivity"

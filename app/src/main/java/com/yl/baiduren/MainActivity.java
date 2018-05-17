@@ -77,11 +77,16 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     private int num = 0;
     private long singTime = 0L;//记录按下时长
 
-    private List<LinearLayout> linearLayoutList;
-    private List<TextView> textList;
-    private List<ImageView> imageViewList;
     private Dialog dialog;
     public static LinearLayout ll_parent_gx;
+    private ImageView iv_home;
+    private ImageView iv_too;
+    private ImageView iv_three;
+    private ImageView iv_fore;
+    private TextView tv_home;
+    private TextView tv_jzlc;
+    private TextView tv_zsr;
+    private TextView tv_wo;
 
     @Override
     public int loadWindowLayout() {
@@ -92,12 +97,12 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
     public void initViews() {
         EventBus.getDefault().register(this);
         initView();
+        initEvents();//初始化事件
 
     }
 
     private void initView() {
 
-        fragmentManager = getSupportFragmentManager();
         id_btn_home_oneyuan = findViewById(R.id.id_btn_home_oneyuan);
         id_btn_home_oneyuan.setOnClickListener(this);//需求对对碰
         ll_parent_gx = findViewById(R.id.ll_parent_gx);
@@ -105,73 +110,58 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
 
         //父布局
         ll_One = findViewById(R.id.ll_one);
-        ll_One.setOnClickListener(this);
         ll_Too = findViewById(R.id.ll_too);
-        ll_Too.setOnClickListener(this);
         ll_Three = findViewById(R.id.ll_three);
-        ll_Three.setOnClickListener(this);
         ll_Fore = findViewById(R.id.ll_fore);
-        ll_Fore.setOnClickListener(this);
-
-
-        linearLayoutList = new ArrayList<>();
-        linearLayoutList.add(ll_One);
-        linearLayoutList.add(ll_Too);
-        linearLayoutList.add(ll_Three);
-        linearLayoutList.add(ll_Fore);
 
         //图片
-        ImageView iv_home = findViewById(R.id.iv_home);
-        ImageView iv_too = findViewById(R.id.iv_too);
-        ImageView iv_three = findViewById(R.id.iv_three);
-        ImageView iv_fore = findViewById(R.id.iv_fore);
-        iv_home.setSelected(true);
-        imageViewList = new ArrayList<>();
-        imageViewList.add(iv_home);
-        imageViewList.add(iv_too);
-        imageViewList.add(iv_three);
-        imageViewList.add(iv_fore);
-
+        iv_home = findViewById(R.id.iv_home);
+        iv_too = findViewById(R.id.iv_too);
+        iv_three = findViewById(R.id.iv_three);
+        iv_fore = findViewById(R.id.iv_fore);
 
         //字体
-        TextView tv_home = findViewById(R.id.tv_home);
-        TextView tv_jzlc = findViewById(R.id.tv_jzlc);
-        TextView tv_zsr = findViewById(R.id.tv_zsr);
-        TextView tv_wo = findViewById(R.id.tv_wo);
-        textList = new ArrayList<>();
-        textList.add(tv_home);
-        textList.add(tv_jzlc);
-        textList.add(tv_zsr);
-        textList.add(tv_wo);
+        tv_home = findViewById(R.id.tv_home);
+        tv_jzlc = findViewById(R.id.tv_jzlc);
+        tv_zsr = findViewById(R.id.tv_zsr);
+        tv_wo = findViewById(R.id.tv_wo);
 
         currMenu = BOTTOM_MENU_ONE;
     }
 
+    private void initEvents() {
+        ll_One.setOnClickListener(this);
+        ll_Too.setOnClickListener(this);
+        ll_Three.setOnClickListener(this);
+        ll_Fore.setOnClickListener(this);
+    }
 
     @Override
     protected void onResume() {
         super.onResume();
-
-
-        if (this.currMenu == BOTTOM_MENU_ONE) {// 首页
-            ll_One.performClick();
-            LUtils.e("----onResume---首页------");
-        } else if (this.currMenu == BOTTOM_MENU_TOO) {//
-            ll_Too.performClick();
-            LUtils.e("----onResume---解债流程------");
-        } else if (this.currMenu == BOTTOM_MENU_THREE) {//
-            ll_Three.performClick();
-            LUtils.e("----onResume---债事人------");
-        } else if (this.currMenu == BOTTOM_MENU_FORE) {// 我的
-            ll_Fore.performClick();
-            LUtils.e("----onResume---我的------");
-        } else if (currMenu == BOTTOM_MENU_XUQIU) {//需求对对碰
-            id_btn_home_oneyuan.performClick();
-            LUtils.e("----onResume---需求对对碰------");
-        }
-
+        LUtils.e("*******---onResume---**********");
+        performClickEv();
+        Util.getInstance().setCJ(this);
         getVersion_Code();
     }
+
+
+    @Override
+    protected void onPause() {
+        super.onPause();
+        LUtils.e("*******---onPause---**********");
+        Util.getInstance().setCJ(this);
+
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        LUtils.e("*******---onStop---**********");
+        Util.getInstance().setCJ(this);
+
+    }
+
 
     /**
      * 因为启动模式是singleTask
@@ -184,6 +174,13 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         super.onNewIntent(intent);
         setIntent(intent);
         currMenu = getIntent().getIntExtra("currMenu", 0);
+        performClickEv();
+    }
+
+    /**
+     * 触发点击事件
+     */
+    private void performClickEv() {
         if (this.currMenu == BOTTOM_MENU_ONE) {// 首页
             ll_One.performClick();
         } else if (this.currMenu == BOTTOM_MENU_TOO) {//
@@ -197,201 +194,138 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
         }
     }
 
+    /**
+     * 进行选中Tab的处理
+     * @param i
+     */
+    private void selectTab(int i) {
+        fragmentManager = getSupportFragmentManager();
+        FragmentTransaction trans = fragmentManager.beginTransaction();
+        hideFragments(trans);
+        defaultTextColor();
+        switch (i) {
+            case BOTTOM_MENU_ONE:
+                iv_home.setSelected(true);
+                tv_home.setTextColor(getResources().getColor(R.color.blue));
+                if (oneFragment == null) {
+                    oneFragment = new OneFragment();
+                    trans.add(R.id.fl_contentLayout, oneFragment);
+                } else {
+                    trans.show(oneFragment);
+                }
+                break;
+            case BOTTOM_MENU_TOO:
+                iv_too.setSelected(true);
+                tv_jzlc.setTextColor(getResources().getColor(R.color.blue));
+                if (tooFragment == null) {
+                    tooFragment = new TooFragment();
+                    trans.add(R.id.fl_contentLayout, tooFragment);
+                } else {
+                    trans.show(tooFragment);
+                }
+                break;
+            case BOTTOM_MENU_THREE:
+                iv_three.setSelected(true);
+                tv_zsr.setTextColor(getResources().getColor(R.color.blue));
+                if (UserInfoUtils.IsLogin(this)) {
+                    if (threeFragment == null) {
+                        threeFragment = new ThreeFragment();
+                        trans.add(R.id.fl_contentLayout, threeFragment);
+                    } else {
+                        trans.show(threeFragment);
+                    }
+                } else {
+                    startActivity(new Intent(this, Login_Activity_Password.class).putExtra("backPage", 3));
+                }
+                break;
+            case BOTTOM_MENU_FORE:
+
+                //显示我的页
+                iv_fore.setSelected(true);
+                tv_wo.setTextColor(getResources().getColor(R.color.blue));
+                if (foreFragment == null) {
+                    foreFragment = new ForeFragment();
+                    trans.add(R.id.fl_contentLayout, foreFragment);
+                } else {
+                    trans.show(foreFragment);
+                }
+                break;
+            case BOTTOM_MENU_XUQIU:
+                //需求对对碰
+                if (demandFragment == null) {
+                    demandFragment = new DemandFragment();
+                    trans.add(R.id.fl_contentLayout, demandFragment);
+                } else {
+                    trans.show(demandFragment);
+                }
+                break;
+        }
+
+        trans.commitAllowingStateLoss();
+    }
+
     @Override
     public void onClick(View v) {
 
         int id = v.getId();
         if (id == R.id.ll_one) {
-            ll_One.setTag(true);
-            currMenu = BOTTOM_MENU_ONE;
-            changeFragment();
-            setLinearLayoutListColor();
-
+            currMenu=BOTTOM_MENU_ONE;
         } else if (id == R.id.ll_too) {
-            LUtils.e("------点击-----解债流程-------");
-            ll_Too.setTag(true);
-            currMenu = BOTTOM_MENU_TOO;
-            changeFragment();
-            setLinearLayoutListColor();
-
+            currMenu=BOTTOM_MENU_TOO;
         } else if (id == R.id.ll_three) {
-            LUtils.e("------点击-----债事人-------");
-            ll_Three.setTag(true);
-            currMenu = BOTTOM_MENU_THREE;
-            changeFragment();
-            setLinearLayoutListColor();
-
+            currMenu=BOTTOM_MENU_THREE;
         } else if (id == R.id.ll_fore) {
-            LUtils.e("------点击-----我的-------");
-            ll_Fore.setTag(true);
-            currMenu = BOTTOM_MENU_FORE;
-            changeFragment();
-            setLinearLayoutListColor();
-
+            currMenu=BOTTOM_MENU_FORE;
         } else if (id == R.id.id_btn_home_oneyuan) {//需求对对碰
-            LUtils.e("------点击-----需求对对碰-------");
-            currMenu = BOTTOM_MENU_XUQIU;
-            changeFragment();
-            for (int i = 0; i < linearLayoutList.size(); i++) {
-                textList.get(i).setTextColor(getResources().getColor(R.color.light_hei));
-                imageViewList.get(i).setSelected(false);
-            }
+            currMenu=BOTTOM_MENU_XUQIU;
         }
-
+        selectTab(currMenu);
     }
 
-    private void setLinearLayoutListColor() {
+    /**
+     * 隐藏fragment
+     *
+     * @param trans
+     */
+    private void hideFragments(FragmentTransaction trans) {
+        //隐藏首页Fragment
+        if (oneFragment != null) {
+            trans.hide(oneFragment);
+        }
+        //隐藏债事管理Fragment
+        if (tooFragment != null) {
+            trans.hide(tooFragment);
+        }
+        //隐藏债事人管理Fragment
+        if (threeFragment != null) {
+            trans.hide(threeFragment);
+        }
 
-        for (int i = 0; i < linearLayoutList.size(); i++) {
-            if (linearLayoutList.get(i).getTag() != null && (Boolean) (linearLayoutList.get(i).getTag())) {
-                textList.get(i).setTextColor(getResources().getColor(R.color.blue));
-                linearLayoutList.get(i).setTag(false);
-                imageViewList.get(i).setSelected(true);
-            } else {
-                textList.get(i).setTextColor(getResources().getColor(R.color.light_hei));
-                imageViewList.get(i).setSelected(false);
-            }
+        //隐藏我的Fragment
+        if (this.foreFragment != null) {
+            trans.hide(foreFragment);
+        }
+        if (demandFragment != null) {
+            trans.hide(demandFragment);
         }
     }
 
     /**
-     * 切换fragmnet
+     * 默认字体颜色 图片选中状态
      */
-    private void changeFragment() {
-        FragmentTransaction trans = fragmentManager.beginTransaction();
+    private void defaultTextColor(){
+        tv_home.setTextColor(getResources().getColor(R.color.light_hei));
+        tv_jzlc.setTextColor(getResources().getColor(R.color.light_hei));
+        tv_zsr.setTextColor(getResources().getColor(R.color.light_hei));
+        tv_wo.setTextColor(getResources().getColor(R.color.light_hei));
 
-        if (currMenu == BOTTOM_MENU_ONE) {//首页Fragment
-
-            if (oneFragment == null) {
-                oneFragment = new OneFragment();
-                trans.add(R.id.fl_contentLayout, oneFragment);
-            } else {
-                trans.show(oneFragment);
-            }
-            //隐藏 Fragment
-            if (tooFragment != null) {
-                trans.hide(tooFragment);
-            }
-            //隐藏 Fragment
-            if (threeFragment != null) {
-                trans.hide(threeFragment);
-            }
-            //隐藏我的Fragment
-            if (this.foreFragment != null) {
-                trans.hide(foreFragment);
-            }
-            if (demandFragment != null) {
-                trans.hide(demandFragment);
-            }
-
-        } else if (currMenu == BOTTOM_MENU_TOO) {//
-
-            if (tooFragment == null) {
-                tooFragment = new TooFragment();
-                trans.add(R.id.fl_contentLayout, tooFragment);
-            } else {
-                trans.show(tooFragment);
-            }
-
-
-            //隐藏 Fragment
-            if (oneFragment != null) {
-                trans.hide(oneFragment);
-            }
-
-            //隐藏 Fragment
-            if (threeFragment != null) {
-                trans.hide(threeFragment);
-            }
-            //隐藏我的Fragment
-            if (this.foreFragment != null) {
-                trans.hide(foreFragment);
-            }
-            if (demandFragment != null) {
-                trans.hide(demandFragment);
-            }
-        } else if (currMenu == BOTTOM_MENU_THREE) {//债事人管理
-
-            if (UserInfoUtils.IsLogin(this)) {
-                if (threeFragment == null) {
-                    threeFragment = new ThreeFragment();
-                    trans.add(R.id.fl_contentLayout, threeFragment);
-                } else {
-                    trans.show(threeFragment);
-                }
-            } else {
-                startActivity(new Intent(this, Login_Activity_Password.class).putExtra("backPage", 3));
-            }
-            //隐藏首页Fragment
-            if (oneFragment != null) {
-                trans.hide(oneFragment);
-            }
-            //隐藏债事管理Fragment
-            if (tooFragment != null) {
-                trans.hide(tooFragment);
-            }
-            //隐藏我的Fragment
-            if (this.foreFragment != null) {
-                trans.hide(foreFragment);
-            }
-            if (demandFragment != null) {
-                trans.hide(demandFragment);
-            }
-        } else if (currMenu == BOTTOM_MENU_FORE) {
-
-            //显示我的页
-            if (foreFragment == null) {
-                foreFragment = new ForeFragment();
-                trans.add(R.id.fl_contentLayout, foreFragment);
-            } else {
-                trans.show(foreFragment);
-            }
-
-            //隐藏首页Fragment
-            if (oneFragment != null) {
-                trans.hide(oneFragment);
-            }
-            //隐藏债事管理Fragment
-            if (tooFragment != null) {
-                trans.hide(tooFragment);
-            }
-            //隐藏债事人管理Fragment
-            if (threeFragment != null) {
-                trans.hide(threeFragment);
-            }
-
-            if (demandFragment != null) {
-                trans.hide(demandFragment);
-            }
-        } else if (currMenu == BOTTOM_MENU_XUQIU) {//需求对对碰
-            LUtils.e("-------需求对对碰---fragment------");
-            if (demandFragment == null) {
-                demandFragment = new DemandFragment();
-                trans.add(R.id.fl_contentLayout, demandFragment);
-            } else {
-                trans.show(demandFragment);
-            }
-
-            //隐藏首页Fragment
-            if (oneFragment != null) {
-                trans.hide(oneFragment);
-            }
-            //隐藏债事管理Fragment
-            if (tooFragment != null) {
-                trans.hide(tooFragment);
-            }
-            //隐藏债事人管理Fragment
-            if (threeFragment != null) {
-                trans.hide(threeFragment);
-            }
-
-            //隐藏我的Fragment
-            if (this.foreFragment != null) {
-                trans.hide(foreFragment);
-            }
-        }
-        trans.commitAllowingStateLoss();
+        iv_home.setSelected(false);
+        iv_too.setSelected(false);
+        iv_three.setSelected(false);
+        iv_fore.setSelected(false);
     }
+
+
 
     /**
      * 接收到点击事件吊起二维码扫描
@@ -508,10 +442,7 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                         String force = data.getIsForce();
                         checkUpdate(versionNum, updataMeassage, force);
                     }
-
-
                 }
-
             }
         };
         baseObserver.setStop(true);
@@ -552,7 +483,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
             DialogUtils.showDialogVersion(this, true, prompt, new DialogUtils.OnButtonEventListener1() {
                 @Override
                 public void onConfirm() {
-                    AppInfoUtil.intit_getClick(getApplication());
+//                    AppInfoUtil.intit_getClick(getApplication());
+                    AppInfoUtil.init360(getApplication(), AppInfoUtil.getAppPkgName());
+                    Util.getInstance().setCJ(MainActivity.this);
                 }
 
                 @Override
@@ -562,7 +495,9 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
                     } else {  //
                         dialog.dismiss();
                     }
+                    Util.getInstance().setCJ(MainActivity.this);
                 }
+
             });
         } else {
             LUtils.e("------没更新----");

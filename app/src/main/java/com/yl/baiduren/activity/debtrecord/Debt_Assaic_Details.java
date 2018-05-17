@@ -159,7 +159,7 @@ public class Debt_Assaic_Details extends BaseActivity {
     public void isShowUpdata() {
         List<BaseRequest> baseRequestList = GreenDaoUtils.getInstance(this).getBaseRequestDao().loadAll();
         if (baseRequestList.size() != 0) {
-            if (userId == baseRequestList.get(0).getUid()) {
+            if (userId.equals(baseRequestList.get(0).getUid()) ) {
                 assic_details_updata.setVisibility(View.VISIBLE);
             } else {
                 assic_details_updata.setVisibility(View.GONE);

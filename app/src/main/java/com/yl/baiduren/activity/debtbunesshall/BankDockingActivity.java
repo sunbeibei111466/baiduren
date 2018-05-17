@@ -15,6 +15,7 @@ import com.yl.baiduren.service.ServiceUrl;
 public class BankDockingActivity extends AppCompatActivity implements View.OnClickListener {
 
     private ImageView iv_shuoming;
+    private WebView webView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,7 +25,7 @@ public class BankDockingActivity extends AppCompatActivity implements View.OnCli
         iv_shuoming.setOnClickListener(this);
 
 
-        WebView webView = findViewById(R.id.debt_bank_name);
+        webView = findViewById(R.id.debt_bank_name);
         com.tencent.smtt.sdk.WebSettings webSettings = webView.getSettings();
         webSettings.setJavaScriptEnabled(true);//支持js
         webSettings.setJavaScriptCanOpenWindowsAutomatically(true); //支持通过JS打开新窗口
@@ -37,6 +38,7 @@ public class BankDockingActivity extends AppCompatActivity implements View.OnCli
     public void onClick(View v) {
         if (v == iv_shuoming) {
             finish();
+            webView.destroy();
         }
     }
 }

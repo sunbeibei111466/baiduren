@@ -210,6 +210,7 @@ public class OneFragment extends BaseFragment implements View.OnClickListener, O
     public void onHiddenChanged(boolean hidden) {
         super.onHiddenChanged(hidden);
         if (!hidden) {
+            Util.getInstance().setCJ(getActivity());
             getHttpHomeData();
             judgmentNews();
         }
@@ -620,4 +621,6 @@ public class OneFragment extends BaseFragment implements View.OnClickListener, O
         super.onDetach();
         getActivity().unregisterReceiver(mBroadcastReceiver);
     }
+
+
 }

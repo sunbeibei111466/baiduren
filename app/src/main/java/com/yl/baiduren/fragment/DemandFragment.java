@@ -11,6 +11,7 @@ import com.yl.baiduren.activity.supply_demand.Supply_Demend_Hall;
 import com.yl.baiduren.activity.supply_demand.Supply_Demend_Speed_Dating;
 import com.yl.baiduren.base.BaseFragment;
 import com.yl.baiduren.utils.UserInfoUtils;
+import com.yl.baiduren.utils.Util;
 
 
 public class DemandFragment extends BaseFragment {

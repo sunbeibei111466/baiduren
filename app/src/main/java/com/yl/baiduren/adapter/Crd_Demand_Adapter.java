@@ -2,6 +2,7 @@ package com.yl.baiduren.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -130,7 +131,7 @@ public class Crd_Demand_Adapter extends RecyclerView.Adapter<My_Demand_ViewHolde
 class My_Demand_ViewHolder extends RecyclerView.ViewHolder {
     public ImageView iv_crd_assic, iv_delete;
     public TextView tv_need_name, tv_crd_amout, tv_crd_area, tv_crd_beizhu;
-    public LinearLayout ll_demand_parent;
+    public CardView ll_demand_parent;
 
     public My_Demand_ViewHolder(View itemView) {
         super(itemView);

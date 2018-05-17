@@ -86,7 +86,7 @@ public class PhysicalBorrowingDetails extends BaseActivity {
     public void isShowUpdata() {
         List<BaseRequest> baseRequestList = GreenDaoUtils.getInstance(this).getBaseRequestDao().loadAll();
         if (baseRequestList.size() != 0) {
-            if (userId == baseRequestList.get(0).getUid()) {
+            if (userId.equals(baseRequestList.get(0).getUid())) {
                 iv_physical_details_updata.setVisibility(View.VISIBLE);
             } else {
                 iv_physical_details_updata.setVisibility(View.GONE);

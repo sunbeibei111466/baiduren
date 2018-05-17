@@ -1,4 +1,4 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,12 +6,14 @@
     tools:context="com.yl.baiduren.fragment.OneFragment">
 
     <LinearLayout
+        android:id="@+id/ll_herder"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
+        android:layout_height="200dp"
         android:layout_weight="3"
         android:background="@mipmap/my_backgroup"
         android:gravity="center"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        >
 
         <!--登陆时 界面-->
         <LinearLayout
@@ -132,9 +134,9 @@
     </LinearLayout>
 
     <ScrollView
+        android:layout_below="@+id/ll_herder"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="7"
+        android:layout_height="match_parent"
         android:background="@color/f5f5f5"
         android:scrollbars="none">
 
@@ -254,7 +256,7 @@
 
                 <ImageView
                     style="@style/my_ll_image_style"
-                    android:src="@mipmap/apply_debt" />
+                    android:src="@mipmap/baogao" />
 
                 <TextView
                     android:id="@+id/tv_my_report"
@@ -340,4 +342,4 @@
     </ScrollView>
 
 
-</LinearLayout>
+</RelativeLayout>

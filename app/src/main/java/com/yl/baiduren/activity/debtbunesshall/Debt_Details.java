@@ -207,8 +207,9 @@ public class Debt_Details extends BaseActivity implements View.OnClickListener, 
     }
 
     private void requestWord() {//详情接口
-        Debt_Details_Entity entity = new Debt_Details_Entity(DataWarehouse.getBaseRequest(this));
+
         if (UserInfoUtils.IsLogin(this)) {
+            Debt_Details_Entity entity = new Debt_Details_Entity(DataWarehouse.getBaseRequest(this));
             entity.setId(id);
             String json = Util.toJson(entity);
             LUtils.e("json-----" + json);
@@ -217,7 +218,6 @@ public class Debt_Details extends BaseActivity implements View.OnClickListener, 
                     .getDetailsResult(signature, RequestBody.create(MediaType.parse(Constant.JSON), json))
                     .compose(compose(this.<BaseEntity<Debt_Details_Result>>bindToLifecycle()))
                     .subscribe(new BaseObserver<Debt_Details_Result>(this) {
-
 
                         @Override
                         protected void onSuccees(String code, Debt_Details_Result data, BaseRequest baseResponse) throws Exception {
@@ -305,6 +305,7 @@ public class Debt_Details extends BaseActivity implements View.OnClickListener, 
 
         } else {
             finish();
+
         }
     }
 
@@ -349,7 +350,7 @@ public class Debt_Details extends BaseActivity implements View.OnClickListener, 
      */
     private void isMoHu() {
         layou_details.setVisibility(View.GONE);
-        Glide.with(this).load(R.mipmap.mohu)
+        Glide.with(this).load(R.drawable.menglong)
                 .bitmapTransform(new BlurTransformation(this, 30)).into(new ViewTarget<View, GlideDrawable>(linearLayout) {
             //括号里为需要加载的控件
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
